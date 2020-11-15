@@ -8,6 +8,11 @@ export const GlobalStyles = createGlobalStyle`
 
     ${fontFaces}
     
+    *{
+        padding:0;
+        margin:0;
+
+    }
     body{
         font-family:'Montserrat';
         color:#ffffff;

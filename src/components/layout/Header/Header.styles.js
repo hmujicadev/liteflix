@@ -5,17 +5,20 @@ export const HeaderWrapper = styled.div`
   max-height: 67px;
   height: 67px;
   margin: 0 auto;
+  position: relative;
 `;
 
 export const StyledHeader = styled.header`
   width: 100%;
   background-color: lightgray;
   display: flex;
+  justify-content: space-between;
+  height: inherit;
 `;
 
 export const NavBar = styled.nav`
   display: flex;
-  flex: 0 0 40%;
+  flex: 0 0 50%;
 `;
 
 export const NavBarList = styled.ul`
