@@ -1,11 +1,14 @@
+import '@babel/polyfill';
 import React from 'react';
+
 import {render} from 'react-dom';
+import MoviesProvider from './context/moviesContext';
 
 const App = () => {
   return (
-    <div>
+    <MoviesProvider>
       <h1>Hola Mundo</h1>
-    </div>
+    </MoviesProvider>
   );
 };
 
