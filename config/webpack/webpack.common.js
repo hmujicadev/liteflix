@@ -26,6 +26,31 @@ module.exports = {
         test: /\.html/,
         use: ['html-loader'],
       },
+
+      {
+        test: /\.(png|svg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000, // if less than 10 kb, add base64 encoded image to css
+              name: 'assets/images/[hash].[ext]', // if more than 10 kb move to this folder in build using file-loader
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000, // if less than 10 kb, add base64 encoded image to css
+              name: 'assets/fonts/[hash].[ext]', // if more than 10 kb move to this folder in build using file-loader
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
