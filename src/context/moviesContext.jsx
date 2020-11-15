@@ -33,7 +33,7 @@ const MoviesProvider = ({children}) => {
   };
 
   useEffect(() => {
-    loadMovies();
+    /* loadMovies(); */
   }, []);
 
   return <MoviesContext.Provider value={{movies: 'test'}}>{children}</MoviesContext.Provider>;
