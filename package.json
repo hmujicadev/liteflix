@@ -1,0 +1,19 @@
+{
+  "name": "liteflix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmujicadev/liteflix.git"
+  },
+  "author": "Hector Mujica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmujicadev/liteflix/issues"
+  },
+  "homepage": "https://github.com/hmujicadev/liteflix#readme"
+}
