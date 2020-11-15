@@ -10,11 +10,14 @@ export const GlobalStyles = createGlobalStyle`
     
     body{
         font-family:'Montserrat';
-        color:'#ffffff';
+        color:#ffffff;
     }
     h2 {
         font-family: 'Roboto Slab';
         font-weight: 700;
+    }
+    ul{
+        list-style:none;
     }
 
 `;
