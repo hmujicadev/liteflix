@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header/Header.component';
 import {arrayOf, oneOfType, node} from 'prop-types';
+import Main from './Layout.styles';
 
 const Layout = ({children}) => {
   return (

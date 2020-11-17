@@ -21,7 +21,7 @@ import Menu_URL from '../../../../assets/images/menu.png';
 import Brand from '../../../global/Brand/Brand.component';
 import UserProfile from '../../../global/UserProfile/UserProfile.component';
 
-const Sidebar = ({isOpen = true}) => {
+const Sidebar = ({isOpen = false}) => {
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => setOpen(!open);

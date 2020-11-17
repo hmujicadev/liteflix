@@ -11,8 +11,8 @@ const Header = () => {
     <HeaderWrapper>
       <StyledHeader>
         <NavBar>
+          <Brand />
           <NavBarList>
-            <Brand />
             {NAVBAR_ITEMS.map(item => (
               <NavBarItem key={item}>{item}</NavBarItem>
             ))}

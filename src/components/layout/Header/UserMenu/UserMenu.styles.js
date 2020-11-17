@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const UserMenuWrapper = styled.div`
   display: flex;
   align-items: center;
-  flex: 0 0 20%;
+  flex: 0 0 15%;
   position: relative;
 `;
 
@@ -13,6 +13,7 @@ export const UserMenuList = styled.ul`
   align-items: center;
   justify-content: space-between;
   align-self: right;
+  margin: 10px 0 0 0;
 `;
 
 export const DropdownWrapper = styled.div`

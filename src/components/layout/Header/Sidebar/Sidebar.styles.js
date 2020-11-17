@@ -25,6 +25,9 @@ export const SidebarOverlay = styled.div`
   top: 0;
   left: 0;
   opacity: ${({isOpen}) => (isOpen ? 1 : 0)};
+  @media ${device.mobileL} {
+    display: none;
+  }
 `;
 export const StyledSidebar = styled.aside``;
 export const SidebarMenuLogoWrapper = styled.div`
