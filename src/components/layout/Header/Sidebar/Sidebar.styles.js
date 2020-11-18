@@ -25,7 +25,7 @@ export const SidebarOverlay = styled.div`
   left: 0;
   opacity: ${({isOpen}) => (isOpen ? 1 : 0)};
   @media ${device.tablet} {
-    display: block;
+    display: ${({isOpen}) => (isOpen ? 'block' : 'none')};
   }
 `;
 export const StyledSidebar = styled.aside``;

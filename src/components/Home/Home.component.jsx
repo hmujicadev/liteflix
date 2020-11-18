@@ -1,35 +1,33 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import Layout from '../layout/Layout.component';
-import COVER_PAGE_WRAPPER_URL from '../../assets/images/cover-page.png';
-import {
-  FeaturedSection,
-  CoverPageWrapper,
-  FeaturedSectionImage,
-  FeaturedSectionOverlay
-  
-} from './Home.style';
+import FeaturedSection from '../FeaturedSection/FeaturedSection.component';
+import {MoviesContext} from '../../context/moviesContext';
+import MyMoviesSection from '../MyMoviesSection/MyMoviesSection.component';
+import UpcomingSection from '../UpcomingSection/UpcomingSection.component';
+import PopularSection from '../PopularSection/PopularSection.component';
 
 const Home = () => {
-  return (
-    <>
-      <Layout>
-        <FeaturedSection>
-        <FeaturedSectionOverlay/>
-          <FeaturedSectionImage src={COVER_PAGE_WRAPPER_URL} />
-        </FeaturedSection>
+  const {movies, loadMovies} = useContext(MoviesContext);
+  useEffect(() => {
+    loadMovies();
+  }, []);
 
-          <section>
-            <CoverPageWrapper></CoverPageWrapper>
-          </section>
-          <section>
-      
-          </section>
-          <section>
-        
-          </section>
-         
-      </Layout>
-    </>
+  useEffect(() => {
+    console.log(movies);
+  }, [movies]);
+  return (
+    <Layout>
+      <>
+        {movies && (
+          <>
+            <FeaturedSection featuredMovie={movies.featured} />
+            <UpcomingSection upcomingMovies={movies.upcomingMovies} />
+            <MyMoviesSection myMovies={movies.myMovies} />
+            <PopularSection popularMovies={movies.popularMovies} />
+          </>
+        )}
+      </>
+    </Layout>
   );
 };
 
