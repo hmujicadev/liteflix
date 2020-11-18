@@ -5,7 +5,7 @@ import {HeaderWrapper, StyledHeader, NavBar, NavBarList, NavBarItem ,MenuWrapper
 import AddMovieActionButton from '../../global/AddMovieAction/AddMovieActionButton.component';
 import UserMenu from './UserMenu/UserMenu.component';
 import Sidebar from './Sidebar/Sidebar.component';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { IoIosMenu } from 'react-icons/io';
 
 
 
@@ -20,7 +20,7 @@ const Header = () => {
       <StyledHeader>
         <NavBar>
           <MenuWrapper onClick={()=>toggleOpen()}>
-            <AiOutlineMenu color='#fff'/>
+            <IoIosMenu color='#fff'/>
           </MenuWrapper>
           <Brand sidebarOpen={sidebarOpen} />
           <NavBarList>

@@ -3,36 +3,31 @@ import {device} from '../../../styles/media';
 
 export const HeaderWrapper = styled.div`
   max-width: 1200px;
-  max-height: 70px;
-  height: 70px;
-  margin: 0 auto;
+  height: 60px;
+  margin: 10px auto 0 auto;
   position: relative;
   z-index: 10;
-  padding: 0 10px 0 10px;
-  @media ${device.tablet} {
-    padding: 0 10px 0 10px;
-  }
+  display:flex;
 `;
 
 export const StyledHeader = styled.header`
-  width: 100%;
+  width:100%;
+  max-width:1200px;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
   height: inherit;
-  position:fixed;
-  z-index:15;
+  position: fixed;
+  z-index: 15;
 `;
 
 export const NavBar = styled.nav`
   display: flex;
-  flex: 0 0 50%;
   @media ${device.tablet} {
     flex: 0 0 100%;
     display: flex;
     justify-content: center;
   }
-
 `;
 
 export const NavBarList = styled.ul`
@@ -56,22 +51,18 @@ export const NavBarItem = styled.li`
   }
 `;
 export const MenuWrapper = styled.div`
-  display:none;
-  height:70px;
-  line-height:4.5;
+  display: none;
+  height: 70px;
+  line-height: 3.7;
   position: absolute;
-  left:10px;
-  &>svg{
-    font-size:25px;
-    
+  left: 10px;
+  & > svg {
+    font-size: 29px;
   }
   @media ${device.tablet} {
-   display:block;
+    display: block;
   }
 `;
-
-
-
 
 export const UserMenuWrapper = styled.div``;
 

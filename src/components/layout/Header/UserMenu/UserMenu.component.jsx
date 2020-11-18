@@ -9,8 +9,13 @@ import {
   DropdownList,
   DropdownItem,
   DropdownItemWrapper,
+  BellAlert,
 } from './UserMenu.styles';
-import Bell from '../../../global/Bell/Bell.component';
+import {FaRegBell} from 'react-icons/fa';
+import {BsChevronDown} from 'react-icons/bs';
+import UserProfile from '../../../global/UserProfile/UserProfile.component';
+import SpanText from '../../../global/SpanText/SpanText.component'
+
 
 const UserMenu = () => {
   return (
@@ -18,17 +23,26 @@ const UserMenu = () => {
       <UserMenuList>
         <UserMenuItem>Niños</UserMenuItem>
         <UserMenuItem>
-          <Bell />
+          <BellAlert />
+          <FaRegBell />
         </UserMenuItem>
-        <UserMenuItem>Niños</UserMenuItem>
-        <UserMenuItem>Niños</UserMenuItem>
+        <UserMenuItem>
+          <UserProfile  size="25px" margin="5px 5px 0 0" />
+          <BsChevronDown color="#fff" />
+        </UserMenuItem>
       </UserMenuList>
       <DropdownWrapper>
+      <DropdownUpArrow />
         <DropdownUpArrowWrapper>
-          <DropdownUpArrow />
+          
           <DropdownList>
             <DropdownItemWrapper>
-              <DropdownItem>test1</DropdownItem>
+              <DropdownItem activeUser>
+              <UserProfile variant='pink'  size="25px" margin="5px 5px 0 0" />
+                <SpanText font='12px'>
+                Ernesto G…
+                </SpanText>
+                </DropdownItem>
             </DropdownItemWrapper>
             <DropdownItemWrapper>
               <DropdownItem>test2</DropdownItem>

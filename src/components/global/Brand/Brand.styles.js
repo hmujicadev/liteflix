@@ -4,7 +4,6 @@ import {device} from '../../../styles/media';
 export const BrandWrapper = styled.div`
   line-height: 4.5;
   margin: 0 30px 0 0;
-  padding: 0 0 0 10px;
   width: 95px;
   transition:all 300ms ease;
 
