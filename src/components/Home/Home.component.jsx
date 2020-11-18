@@ -2,20 +2,32 @@ import React from 'react';
 import Layout from '../layout/Layout.component';
 import COVER_PAGE_WRAPPER_URL from '../../assets/images/cover-page.png';
 import {
+  FeaturedSection,
   CoverPageWrapper,
-  CoverPageBackgroundImage,
-  CoverPageBackgroundImageWrapper,
+  FeaturedSectionImage,
+  FeaturedSectionOverlay
+  
 } from './Home.style';
 
 const Home = () => {
   return (
     <>
       <Layout>
-        <section>
-          <CoverPageBackgroundImage src={COVER_PAGE_WRAPPER_URL} />
+        <FeaturedSection>
+        <FeaturedSectionOverlay/>
+          <FeaturedSectionImage src={COVER_PAGE_WRAPPER_URL} />
+        </FeaturedSection>
 
-          <CoverPageWrapper></CoverPageWrapper>
-        </section>
+          <section>
+            <CoverPageWrapper></CoverPageWrapper>
+          </section>
+          <section>
+      
+          </section>
+          <section>
+        
+          </section>
+         
       </Layout>
     </>
   );

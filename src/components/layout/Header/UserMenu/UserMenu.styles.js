@@ -1,10 +1,14 @@
 import styled from 'styled-components';
+import {device} from '../../../../styles/media';
 
 export const UserMenuWrapper = styled.div`
-  display: flex;
+  display:flex;
   align-items: center;
   flex: 0 0 15%;
   position: relative;
+  @media ${device.tablet}{
+    display: none;
+  }
 `;
 
 export const UserMenuList = styled.ul`

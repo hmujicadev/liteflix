@@ -6,15 +6,16 @@ import {
   AddMovieButtonImage,
   AddMovieButtonText,
 } from './AddMovieActionButton.styles';
-import PlusImageURL from '../../../assets/images/plus.png';
+
+import { FaPlus } from 'react-icons/fa';
 
 const AddMovieActionButton = () => {
   return (
     <AddMovieButtonWrapper>
       <AddMovieButton>
-        <AddMovieButtonImageWrapper>
-          <AddMovieButtonImage src={PlusImageURL} />
-        </AddMovieButtonImageWrapper>
+     
+          <FaPlus color='#fff' size='16px' />
+       
 
         <AddMovieButtonText></AddMovieButtonText>
       </AddMovieButton>

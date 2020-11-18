@@ -5,28 +5,27 @@ export const SidebarWrapper = styled.div`
   background-color: black;
   width: 63.3%;
   height: 100vh;
-  display: block;
-  padding: 10px 20px 10px 15px;
+  padding: 70px 20px 10px 15px;
   position: fixed;
-
+  display: none;
   top: 0;
   left: ${({isOpen}) => (isOpen ? '0' : '-100%')};
   transition: all 300ms ease;
-  @media ${device.mobileL} {
-    display: none;
+  @media ${device.tablet} {
+    display: block;
   }
 `;
 export const SidebarOverlay = styled.div`
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100vh;
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   opacity: ${({isOpen}) => (isOpen ? 1 : 0)};
-  @media ${device.mobileL} {
-    display: none;
+  @media ${device.tablet} {
+    display: block;
   }
 `;
 export const StyledSidebar = styled.aside``;

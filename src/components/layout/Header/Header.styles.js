@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {device} from '../../../styles/media';
 
 export const HeaderWrapper = styled.div`
   max-width: 1200px;
@@ -8,6 +9,9 @@ export const HeaderWrapper = styled.div`
   position: relative;
   z-index: 10;
   padding: 0 10px 0 10px;
+  @media ${device.tablet} {
+    padding: 0 10px 0 10px;
+  }
 `;
 
 export const StyledHeader = styled.header`
@@ -16,22 +20,34 @@ export const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   height: inherit;
+  position:fixed;
+  z-index:15;
 `;
 
 export const NavBar = styled.nav`
   display: flex;
   flex: 0 0 50%;
+  @media ${device.tablet} {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+  }
+
 `;
 
 export const NavBarList = styled.ul`
+  display: flex;
   font-size: 14px;
   flex: 0 0 100%;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
   &:nth-child(n) {
     cursor: pointer;
+  }
+
+  @media ${device.tablet} {
+    display: none;
   }
 `;
 export const NavBarItem = styled.li`
@@ -39,6 +55,23 @@ export const NavBarItem = styled.li`
     font-weight: bold;
   }
 `;
+export const MenuWrapper = styled.div`
+  display:none;
+  height:70px;
+  line-height:4.5;
+  position: absolute;
+  left:10px;
+  &>svg{
+    font-size:25px;
+    
+  }
+  @media ${device.tablet} {
+   display:block;
+  }
+`;
+
+
+
 
 export const UserMenuWrapper = styled.div``;
 

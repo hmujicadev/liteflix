@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
-import {bool} from 'prop-types';
+import React from 'react';
+import {bool, func} from 'prop-types';
 import {
   SidebarMenu,
-  SidebarMenuLogoWrapper,
-  SidebarMenuLogo,
   SidebarOverlay,
   StyledSidebar,
   SidebarWrapper,
@@ -16,24 +14,15 @@ import {
   SidebarNavbarList,
   SidebarNavbarItem,
 } from './Sidebar.styles';
-
-import Menu_URL from '../../../../assets/images/menu.png';
-import Brand from '../../../global/Brand/Brand.component';
 import UserProfile from '../../../global/UserProfile/UserProfile.component';
 
-const Sidebar = ({isOpen = false}) => {
-  const [open, setOpen] = useState(false);
+const Sidebar = ({isOpen,toggleOpen }) => {
 
-  const toggleOpen = () => setOpen(!open);
   return (
     <>
       <SidebarOverlay isOpen={isOpen} onClick={() => toggleOpen()} />
-      <SidebarWrapper isOpen={open}>
+      <SidebarWrapper isOpen={isOpen}>
         <StyledSidebar>
-          <SidebarMenuLogoWrapper>
-            <SidebarMenuLogo src={Menu_URL} />
-            <Brand />
-          </SidebarMenuLogoWrapper>
           <SidebarMenu>
             <SidebarUserMenuWrapper>
               <SidebarUserMenuProfile>
@@ -66,7 +55,8 @@ const Sidebar = ({isOpen = false}) => {
 };
 
 Sidebar.propTypes = {
-  isOpen: bool,
+  isOpen: bool.isRequired,
+  toggleOpen: func.isRequired
 };
 
 export default Sidebar;
