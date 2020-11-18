@@ -1,13 +1,25 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Header from './Header/Header.component';
 import {arrayOf, oneOfType, node} from 'prop-types';
-import Main from './Layout.styles';
+import {MainLoaderWrapper,MainWrapper} from './Layout.styles';
+import Loader from '../global/Loader/Loader.component';
+import {MoviesContext} from '../../context/moviesContext';
 
 const Layout = ({children}) => {
+  const {loading} = useContext(MoviesContext);
+
   return (
     <>
-      <Header />
-      <main>{children}</main>
+      {loading ? (
+        <MainLoaderWrapper>
+          <Loader />
+        </MainLoaderWrapper>
+      ) : (
+        <>
+          <Header />
+          <MainWrapper>{children}</MainWrapper>
+        </>
+      )}
     </>
   );
 };

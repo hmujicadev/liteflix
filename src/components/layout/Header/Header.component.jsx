@@ -1,17 +1,22 @@
 import React, {useState} from 'react';
 import {NAVBAR_ITEMS} from '../../../constants';
 import Brand from '../../global/Brand/Brand.component';
-import {HeaderWrapper, StyledHeader, NavBar, NavBarList, NavBarItem ,MenuWrapper} from './Header.styles';
+import {
+  HeaderWrapper,
+  StyledHeader,
+  NavBar,
+  NavBarList,
+  NavBarItem,
+  MenuWrapper,
+} from './Header.styles';
 import AddMovieActionButton from '../../global/AddMovieAction/AddMovieActionButton.component';
 import UserMenu from './UserMenu/UserMenu.component';
 import Sidebar from './Sidebar/Sidebar.component';
-import { AiOutlineMenu } from 'react-icons/ai';
-
-
+import {IoIosMenu} from 'react-icons/io';
+import SpanText from '../../../components/global/SpanText/SpanText.component';
 
 const Header = () => {
-
-  const [sidebarOpen,setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleOpen = () => setSidebarOpen(!sidebarOpen);
 
@@ -19,20 +24,22 @@ const Header = () => {
     <HeaderWrapper>
       <StyledHeader>
         <NavBar>
-          <MenuWrapper onClick={()=>toggleOpen()}>
-            <AiOutlineMenu color='#fff'/>
+          <MenuWrapper onClick={() => toggleOpen()}>
+            <IoIosMenu color="#fff" />
           </MenuWrapper>
           <Brand sidebarOpen={sidebarOpen} />
           <NavBarList>
             {NAVBAR_ITEMS.map(item => (
               <NavBarItem key={item}>{item}</NavBarItem>
             ))}
-            <AddMovieActionButton />
+            <AddMovieActionButton>
+              <SpanText margin="0 0 0 10px">Agregar Película</SpanText>
+            </AddMovieActionButton>
           </NavBarList>
         </NavBar>
         <UserMenu />
       </StyledHeader>
-      <Sidebar toggleOpen={toggleOpen} isOpen={sidebarOpen}/>
+      <Sidebar toggleOpen={toggleOpen} isOpen={sidebarOpen} />
     </HeaderWrapper>
   );
 };

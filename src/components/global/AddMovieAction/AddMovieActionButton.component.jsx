@@ -7,17 +7,15 @@ import {
   AddMovieButtonText,
 } from './AddMovieActionButton.styles';
 
-import { FaPlus } from 'react-icons/fa';
+import {FaPlus} from 'react-icons/fa';
 
 const AddMovieActionButton = () => {
   return (
     <AddMovieButtonWrapper>
       <AddMovieButton>
-     
-          <FaPlus color='#fff' size='16px' />
-       
+        <FaPlus color="#fff" size="16px" />
 
-        <AddMovieButtonText></AddMovieButtonText>
+        <AddMovieButtonText>Agregar Película</AddMovieButtonText>
       </AddMovieButton>
     </AddMovieButtonWrapper>
   );

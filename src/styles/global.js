@@ -17,6 +17,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family:'Montserrat';
         color:#ffffff;
         background-color:#000000;
+        font-size:14px;
     }
     main{
         margin-top:-70px;

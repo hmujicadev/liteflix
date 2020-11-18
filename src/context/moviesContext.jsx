@@ -13,30 +13,39 @@ export const MoviesContext = createContext();
 /* Componente principal, para manejo del estado por context */
 const MoviesProvider = ({children}) => {
   const [isOnline, setIsOnline] = useState(window.navigator.onLine);
-
+  const [loading, setLoading] = useState(true);
+  const [movies, setMovies] = useState();
   const loadMovies = async () => {
-    saveLocalMovies({
-      title: 'Los caballos paraliticos',
-      actors: ['mmoreno', 'nespina', 'osanchez'],
-    });
     try {
-      let movies = {
-        features: await getFeaturedMovie(),
-        upcomming: await getUpcomingMovies(),
-        popular: await getPopularMovies(),
-        myMovies: getLocalMovies(),
-      };
-      console.log(movies);
+      setLoading(true);
+      const featured = await getFeaturedMovie();
+      const upcoming = await getUpcomingMovies();
+      const popular = await getPopularMovies();
+      const myMovies = getLocalMovies().length ? getLocalMovies(): [];
+      setMovies({
+        featured: featured.data.results[0],
+        upcoming: upcoming.data.results.slice(0, 4),
+        popular: popular.data.results.slice(0, 4),
+        myMovies,
+      });
+      setLoading(false);
+      return;
     } catch (error) {
+      setLoading(false);
       console.log(error.message);
+      return;
     }
   };
-
-  useEffect(() => {
-    /* loadMovies(); */
-  }, []);
-
-  return <MoviesContext.Provider value={{movies: 'test'}}>{children}</MoviesContext.Provider>;
+  return (
+    <MoviesContext.Provider
+      value={{
+        movies,
+        loading,
+        loadMovies,
+      }}>
+      {children}
+    </MoviesContext.Provider>
+  );
 };
 
 MoviesProvider.propTypes = {
