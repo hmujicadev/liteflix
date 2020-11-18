@@ -35,7 +35,7 @@ export const DropdownWrapper = styled.div`
   background-color: #fff;
   position: absolute;
   top: 60px;
-  right: 5px;
+  right: 2px;
   padding: 10px;
   border-radius:5px;
   z-index: 15;
@@ -81,13 +81,13 @@ export const BellAlert = styled.div`
 export const DropdownItemWrapper = styled.div``;
 
 export const DropdownItem = styled.li`
-  min-height:37px;
+  min-height:${props=> props.height? props.height:'37px'};
   display:flex;
-  justify-content:space-around;
+  justify-content:flex-start;
   align-items:center;
-  border-radius:${props=> props.activeUser? '18.5px':''};
+  border-radius:${props=> props.activeUser? '18.5px':'0'};
   box-shadow:${props=> props.activeUser? '0 0 10px 0 rgba(0, 0, 0, 0.1)':''};
-
+  border-bottom:${props=> props.borderb? '.5px solid #9b9b9b':'0'};
 `;
 
 

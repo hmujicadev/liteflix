@@ -9,3 +9,8 @@ export const MainLoaderWrapper = styled.div`
     position:absolute;  
 
 `;
+
+export const MainWrapper = styled.div`
+   width:100%;
+   position:relative;
+`;

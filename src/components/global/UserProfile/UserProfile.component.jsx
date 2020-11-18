@@ -6,7 +6,7 @@ import Pink_profile_URL from '../../../assets/images/profile-pink.png';
 import Gray_profile_URL from '../../../assets/images/profile-gray.png';
 import {UserProfileWrapper, UserProfileImg} from './UserProfile.styles';
 
-const UserProfile = ({variant,size,margin}) => {
+const UserProfile = ({variant,size,margin,padding}) => {
   const getProfileColorByVariant = () => {
     switch (variant) {
       case 'blue':
@@ -21,7 +21,7 @@ const UserProfile = ({variant,size,margin}) => {
   };
   return (
     <UserProfileWrapper>
-      <UserProfileImg size={size} margin={margin} src={getProfileColorByVariant()} />
+      <UserProfileImg size={size} padding={padding} margin={margin} src={getProfileColorByVariant()} />
     </UserProfileWrapper>
   );
 };

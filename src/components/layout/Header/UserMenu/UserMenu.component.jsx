@@ -14,8 +14,7 @@ import {
 import {FaRegBell} from 'react-icons/fa';
 import {BsChevronDown} from 'react-icons/bs';
 import UserProfile from '../../../global/UserProfile/UserProfile.component';
-import SpanText from '../../../global/SpanText/SpanText.component'
-
+import SpanText from '../../../global/SpanText/SpanText.component';
 
 const UserMenu = () => {
   return (
@@ -27,37 +26,73 @@ const UserMenu = () => {
           <FaRegBell />
         </UserMenuItem>
         <UserMenuItem>
-          <UserProfile  size="25px" margin="5px 5px 0 0" />
+          <UserProfile size="25px" margin='0 5px 0 0'/>
           <BsChevronDown color="#fff" />
         </UserMenuItem>
       </UserMenuList>
       <DropdownWrapper>
-      <DropdownUpArrow />
+        <DropdownUpArrow />
         <DropdownUpArrowWrapper>
-          
           <DropdownList>
             <DropdownItemWrapper>
               <DropdownItem activeUser>
-              <UserProfile variant='pink'  size="25px" margin="5px 5px 0 0" />
-                <SpanText font='12px'>
-                Ernesto G…
+                <UserProfile
+                  variant="pink"
+                  padding="5px 0 5px 6px"
+                  size="25px"
+                  margin="0 8px 0 0"
+                />
+                <SpanText font="12px" width="75px">
+                  Ernesto Garmendia
                 </SpanText>
-                </DropdownItem>
+              </DropdownItem>
             </DropdownItemWrapper>
             <DropdownItemWrapper>
-              <DropdownItem>test2</DropdownItem>
+              <DropdownItem>
+                <UserProfile
+                  variant="gray"
+                  padding="5px 0 5px 6px"
+                  size="25px"
+                  margin="0 8px 0 0"
+                />
+                <SpanText font="12px" width="75px" color="#9b9b9b">
+                  User 03
+                </SpanText>
+              </DropdownItem>
             </DropdownItemWrapper>
             <DropdownItemWrapper>
-              <DropdownItem>test3</DropdownItem>
+              <DropdownItem>
+                <UserProfile
+                  variant="gray"
+                  padding="5px 0 5px 6px"
+                  size="25px"
+                  margin="0 8px 0 0"
+                />
+                <SpanText font="12px" width="75px" color="#9b9b9b">
+                  User 04
+                </SpanText>
+              </DropdownItem>
             </DropdownItemWrapper>
             <DropdownItemWrapper>
-              <DropdownItem>test4</DropdownItem>
+              <DropdownItem borderb height='28px'>
+                <SpanText font="12px" padding="10px 0" margin="10px 0 0 0">
+                  Configuración
+                </SpanText>
+              </DropdownItem>
             </DropdownItemWrapper>
             <DropdownItemWrapper>
-              <DropdownItem>test5</DropdownItem>
+            <DropdownItem borderb height='28px'>
+                <SpanText font="12px" padding="10px 0" margin="10px 0 0 0">
+                  Ayuda
+                </SpanText>
+              </DropdownItem>
             </DropdownItemWrapper>
             <DropdownItemWrapper>
-              <DropdownItem>test6</DropdownItem>
+            <DropdownItem height='28px'>
+                <SpanText font="12px" padding="10px 0" margin="10px 0 0 0" weight='bold'>
+                  Log Out
+                </SpanText>
+              </DropdownItem>
             </DropdownItemWrapper>
           </DropdownList>
         </DropdownUpArrowWrapper>

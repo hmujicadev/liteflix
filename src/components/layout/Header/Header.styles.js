@@ -32,7 +32,6 @@ export const NavBar = styled.nav`
 
 export const NavBarList = styled.ul`
   display: flex;
-  font-size: 14px;
   flex: 0 0 100%;
   align-items: center;
   justify-content: space-between;
