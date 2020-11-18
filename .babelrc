@@ -3,6 +3,13 @@
   "plugins": [
     /* "babel-plugin-transform-remove-console", */
     "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-object-rest-spread"
+    "@babel/plugin-proposal-object-rest-spread",
+    [
+      "babel-plugin-styled-components",
+      {
+        "displayName": true
+      }
+    ]
+
   ]
 }

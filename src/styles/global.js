@@ -8,13 +8,27 @@ export const GlobalStyles = createGlobalStyle`
 
     ${fontFaces}
     
+    *{
+        padding:0;
+        margin:0;
+
+    }
     body{
         font-family:'Montserrat';
-        color:'#ffffff';
+        color:#ffffff;
+        background-color:#000000;
     }
+    main{
+        margin-top:-70px;
+        z-index:1;
+    }
+
     h2 {
         font-family: 'Roboto Slab';
         font-weight: 700;
+    }
+    ul{
+        list-style:none;
     }
 
 `;
