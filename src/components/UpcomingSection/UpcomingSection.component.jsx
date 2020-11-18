@@ -1,6 +1,7 @@
 import React from 'react'
 import {array} from 'prop-types';
 import {UpcomingContainer, UpcomingSubTitle} from './UpcomingSection.styles'
+import CardMovie from '../global/CardMovie/CardMovie.component'
 
 const UpcomingSection = ({upcomingMovies}) => {
   console.log(upcomingMovies)

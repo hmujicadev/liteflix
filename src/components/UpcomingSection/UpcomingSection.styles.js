@@ -12,8 +12,14 @@ export const UpcomingContainer = styled.div`
 
 `;
 
-
 export const UpcomingSubTitle = styled.span`
+  font-size:${props => props.font?props.font:'18px'};
+  color:#fff;
+  margin:${props=>props.margin?props.margin:''};
+  font-weight: bold;
+`
+
+export const UpcomingSubTitle = styled.div`
   font-size:${props => props.font?props.font:'18px'};
   color:#fff;
   margin:${props=>props.margin?props.margin:''};

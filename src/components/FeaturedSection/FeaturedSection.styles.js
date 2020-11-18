@@ -10,6 +10,7 @@ export const FeaturedSectionImage = styled.img`
   width: 100%;
   z-index: -1;
   position: absolute;
+  pointer-events: none;
 `;
 export const FeaturedSectionOverlay = styled.div`
   position: absolute;
@@ -17,6 +18,7 @@ export const FeaturedSectionOverlay = styled.div`
   width: 100%;
   z-index: 2;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2) 70%, #000000);
+  pointer-events: none;
 `;
 
 export const FeaturedContainer = styled.div`
@@ -85,5 +87,4 @@ export const OverviewWrapper = styled.div`
 export const Overview = styled.p`
   font-size: 18px;
   color: #fff;
-  text-align: ;
 `;
