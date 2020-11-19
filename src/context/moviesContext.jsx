@@ -35,6 +35,20 @@ const MoviesProvider = ({children}) => {
       console.log(error.message);
       return;
     }
+
+  };
+  const refreshMyMovies = newMovie => {
+    let myNewMovies =
+      movies.myMovies.length <= 3
+        ? [newMovie, ...movies.myMovies]
+        : [newMovie, ...movies.myMovies.slice(0, 1)];
+
+    setMovies({
+      ...movies,
+      myMovies: myNewMovies,
+    });
+    saveLocalMovies(myNewMovies);
+    return true;
   };
   return (
     <MoviesContext.Provider
@@ -42,6 +56,7 @@ const MoviesProvider = ({children}) => {
         movies,
         loading,
         loadMovies,
+        refreshMyMovies
       }}>
       {children}
     </MoviesContext.Provider>

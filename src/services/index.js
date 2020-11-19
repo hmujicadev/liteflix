@@ -26,5 +26,6 @@ export const saveLocalMovies = movies => {
 };
 
 export const getLocalMovies = () => {
-  return JSON.parse(localStorage.getItem(LOCAL_MOVIES));
+  let localMovies = JSON.parse(localStorage.getItem(LOCAL_MOVIES));
+  return localMovies ? localMovies : [];
 };

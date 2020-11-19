@@ -32,6 +32,6 @@ export const PopularCardWrapper = styled.div`
     justify-content: center;
     gap: 5px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(auto, 328px);
+    grid-template-rows: 328px 328px;
   }
 `;
