@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {object} from 'prop-types';
 import {
   FeaturedSectionWrapper,
@@ -12,6 +12,7 @@ import {
   OverviewWrapper,
   Overview,
   FeaturedSubTitle,
+  FeaturedOptionMobile
 } from './FeaturedSection.styles';
 import {IMAGES_URL} from '../../constants';
 import {FiPlay} from 'react-icons/fi';
@@ -19,7 +20,7 @@ import {FaPlus} from 'react-icons/fa';
 import SpanText from '../global/SpanText/SpanText.component';
 
 const FeaturedSection = ({featuredMovie}) => {
-  console.log('Featuured', featuredMovie);
+  console.log('Featured', featuredMovie);
   return (
     <>
       <FeaturedSectionWrapper>
@@ -33,16 +34,17 @@ const FeaturedSection = ({featuredMovie}) => {
           <FeaturedOptionsWrapper>
             <FeaturedOption>
               <FiPlay />
-              <SpanText color="#fff" padding="0 0 0 10px">
+              <SpanText font='16px' color="#fff" padding="0 0 0 10px">
                 Reproducir
               </SpanText>
             </FeaturedOption>
             <FeaturedOption>
               <FaPlus />
-              <SpanText color="#fff" padding="0 0 0 10px">
+              <SpanText font='16px' color="#fff" padding="0 0 0 10px">
                 Mi lista
               </SpanText>
             </FeaturedOption>
+            <FeaturedOptionMobile><FaPlus /></FeaturedOptionMobile>
           </FeaturedOptionsWrapper>
 
           <OverviewWrapper>

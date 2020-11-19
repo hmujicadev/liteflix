@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {device} from '../../styles/media'
 
 export const UpcomingContainer = styled.div`
   max-width:1200px;
@@ -6,22 +7,39 @@ export const UpcomingContainer = styled.div`
   margin:0 auto;
   height:auto;
   z-index: 4;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-
+  @media ${device.mobileL}{
+      width:auto;
+      padding:0 15px;
+    }
 `;
 
-export const UpcomingSubTitle = styled.span`
-  font-size:${props => props.font?props.font:'18px'};
+export const UpcomingSubTitle = styled.h3`
+  font-size:20px;
   color:#fff;
-  margin:${props=>props.margin?props.margin:''};
   font-weight: bold;
+  margin:0 0 10px 2px;
 `
 
-export const UpcomingSubTitle = styled.div`
-  font-size:${props => props.font?props.font:'18px'};
-  color:#fff;
-  margin:${props=>props.margin?props.margin:''};
-  font-weight: bold;
+export const UpcomingCardWrapper  = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 255px);
+  grid-template-rows:minmax(auto,155px);
+  column-gap:31px;
+  row-gap:10px;
+  justify-content:space-between;
+  @media ${device.laptop}{
+      justify-content:center;
+      grid-template-columns: repeat(3,255px);
+    }
+  @media ${device.tablet}{
+      justify-content:center;
+      grid-template-columns: repeat(2,255px);
+    }
+  @media ${device.mobileL}{
+      justify-content:flex-start;
+      grid-template-columns: 100%;
+      grid-template-rows:auto;
+    }
+
+  
 `
