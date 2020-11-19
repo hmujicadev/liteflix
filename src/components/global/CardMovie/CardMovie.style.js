@@ -41,7 +41,7 @@ export const CardMovieInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  opacity: 1;
+  opacity: 0;
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 1) 10%,

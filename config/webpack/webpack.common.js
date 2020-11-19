@@ -28,7 +28,7 @@ module.exports = {
       },
 
       {
-        test: /\.(png|svg|gif)$/,
+        test: /\.(ico|png|svg|gif)$/,
         use: [
           {
             loader: 'url-loader',
@@ -58,6 +58,7 @@ module.exports = {
     new CleanWebpackPlugin({}),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../../public', 'index.html'),
+      favicon: path.resolve(__dirname, '../../public', 'liteflix.ico')
     }),
   ],
   devServer: {
