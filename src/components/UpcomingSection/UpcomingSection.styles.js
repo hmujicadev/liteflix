@@ -4,7 +4,7 @@ import {device} from '../../styles/media'
 export const UpcomingContainer = styled.div`
   max-width:1200px;
   width:100%;
-  margin:0 auto;
+  margin: 0 auto 40px auto;
   height:auto;
   z-index: 4;
   @media ${device.mobileL}{

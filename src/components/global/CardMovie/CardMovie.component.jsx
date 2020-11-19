@@ -9,29 +9,34 @@ import {
   PlayIconWrapper,
   PlussIconWrapper,
   LikeIconWrapper,
+  DownIconWrapper
 } from './CardMovie.style';
 import {BiLike} from 'react-icons/bi';
 import {FiPlay} from 'react-icons/fi';
 import {GoPlus} from 'react-icons/go';
+import {BsChevronDown} from 'react-icons/bs'
 
-const CardMovie = ({src, movie}) => {
+const CardMovie = ({src, movie, large}) => {
   return (
     <CardMovieWrapper>
       <CardMovieImage src={src} />
       <CardMovieInfoWrapper>
-        <CardMovieInfoTitle>{movie.title}</CardMovieInfoTitle>
-        <CardMovieInfo>
+        <CardMovieInfoTitle large={large}>{movie.title}</CardMovieInfoTitle>
+        <CardMovieInfo large={large}>
           98% Coincidencia <CardMovieInfoPG>+16</CardMovieInfoPG> 1h 30 min suspenso
         </CardMovieInfo>
-        <PlayIconWrapper>
+        <PlayIconWrapper large={large}>
           <FiPlay />
         </PlayIconWrapper>
-        <PlussIconWrapper>
+        <LikeIconWrapper large={large}>
           <BiLike />
-        </PlussIconWrapper>
-        <LikeIconWrapper>
-          <GoPlus />
         </LikeIconWrapper>
+        <PlussIconWrapper large={large}>
+          <GoPlus />
+        </PlussIconWrapper>
+        <DownIconWrapper large={large}>
+          <BsChevronDown size='43px'/>
+          </DownIconWrapper>
       </CardMovieInfoWrapper>
     </CardMovieWrapper>
   );
