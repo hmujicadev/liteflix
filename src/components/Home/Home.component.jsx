@@ -21,9 +21,9 @@ const Home = () => {
         {movies && (
           <>
             <FeaturedSection featuredMovie={movies.featured} />
-            <UpcomingSection upcomingMovies={movies.upcomingMovies} />
+            <UpcomingSection upcomingMovies={movies.upcoming} />
             <MyMoviesSection myMovies={movies.myMovies} />
-            <PopularSection popularMovies={movies.popularMovies} />
+            <PopularSection popularMovies={movies.popular} />
           </>
         )}
       </>

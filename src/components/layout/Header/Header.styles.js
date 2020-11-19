@@ -3,11 +3,17 @@ import {device} from '../../../styles/media';
 
 export const HeaderWrapper = styled.div`
   max-width: 1200px;
+  width:100%;
   height: 60px;
-  margin: 10px auto 0 auto;
+  padding: 10px 0 0 0;
+  margin: 0 auto;
   position: relative;
   z-index: 10;
   display:flex;
+  @media ${device.mobileL}{
+      max-width:100%;
+      grid-template-columns: repeat(3,255px);
+    }
 `;
 
 export const StyledHeader = styled.header`
@@ -36,6 +42,7 @@ export const NavBarList = styled.ul`
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  margin: 0 0 0 30px;
   &:nth-child(n) {
     cursor: pointer;
   }
@@ -52,8 +59,8 @@ export const NavBarItem = styled.li`
 export const MenuWrapper = styled.div`
   display: none;
   height: 70px;
-  line-height: 3.7;
   position: absolute;
+  top:3px;
   left: 10px;
   & > svg {
     font-size: 29px;
