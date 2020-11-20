@@ -4,7 +4,7 @@ import {motion} from 'framer-motion';
 export const AddMovieButtonWrapper = styled(motion.div)``;
 
 export const AddMovieButton = styled(motion.button)`
-  width: ${({animated}) => animated ? 0 : '174px'};
+  width: ${({animated}) => (animated ? 0 : '174px')};
   min-width: 40px;
   height: 40px;
   background-color: red;
@@ -22,7 +22,7 @@ export const AddMovieButtonImage = styled.img`
 `;
 
 export const AddMovieButtonText = styled(motion.span)`
-  display: ${({animated}) => animated ? 'none' : 'block'};
+  display: ${({animated}) => (animated ? 'none' : 'block')};
   margin: 0 0 0 5px;
   color: #fff;
   font-size: 16px;

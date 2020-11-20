@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {device} from '../../../styles/media';
-import {motion} from 'framer-motion'
- 
+import {motion} from 'framer-motion';
+
 const IconWrapperStyles = {
   position: 'absolute',
   borderRadius: '50%',
@@ -22,8 +22,8 @@ const IconWrapperStyles = {
 };
 
 export const CardMovieWrapper = styled(motion.div)`
-  align-self:stretch;
-  justify-self:stretch;
+  align-self: stretch;
+  justify-self: stretch;
   position: relative;
   cursor: pointer;
   transition: all 300ms ease;
@@ -31,12 +31,12 @@ export const CardMovieWrapper = styled(motion.div)`
 
 export const CardMovieImage = styled.img`
   width: 100%;
-  height:100%;
+  height: 100%;
 `;
 
 export const CardMovieInfoWrapper = styled.div`
   position: absolute;
-  width:100%;
+  width: 100%;
   max-width: 100%;
   height: 100%;
   bottom: 0;
@@ -55,21 +55,21 @@ export const CardMovieInfoWrapper = styled.div`
   }
 `;
 export const CardMovieInfoTitle = styled.h3`
-  max-width:${props=> (props.large? '50%': 'auto')};
-  width:${props=> (props.large? '50%': 'auto')};   
-  font-size: ${props=> (props.large? '18px': '16px')};  
+  max-width: ${props => (props.large ? '50%' : 'auto')};
+  width: ${props => (props.large ? '50%' : 'auto')};
+  font-size: ${props => (props.large ? '18px' : '16px')};
   color: #fff;
-  white-space:nowrap;
-  text-overflow:ellipsis;
-  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   font-weight: bold;
-  margin:${props=> (props.large? '0 0 0 12px': '0 0 0 10px')};
+  margin: ${props => (props.large ? '0 0 0 12px' : '0 0 0 10px')};
 `;
 export const CardMovieInfo = styled.span`
-  max-width:${props=> (props.large? '108px': 'auto')};
+  max-width: ${props => (props.large ? '108px' : 'auto')};
   font-size: 12px;
   color: #fff;
-  margin:${props=> (props.large? '0 0 59px 12px': '0 0 10px 10px')};
+  margin: ${props => (props.large ? '0 0 59px 12px' : '0 0 10px 10px')};
 `;
 export const CardMovieInfoPG = styled.span`
   width: 21px;
@@ -82,8 +82,8 @@ export const CardMovieInfoPG = styled.span`
 `;
 export const PlayIconWrapper = styled.div`
   ${IconWrapperStyles}
-  bottom: ${props=> (props.large? '133px': 'calc(50% - 20px)')};
-  left: ${props=> (props.large? '12px': 'calc(50% - 20px)')};
+  bottom: ${props => (props.large ? '133px' : 'calc(50% - 20px)')};
+  left: ${props => (props.large ? '12px' : 'calc(50% - 20px)')};
   width: 40px;
   height: 40px;
 `;
@@ -91,28 +91,25 @@ export const PlussIconWrapper = styled.div`
   ${IconWrapperStyles}
   top:10px;
   right: 52px;
-  display:${props=> (props.large? 'none': '')};
+  display: ${props => (props.large ? 'none' : '')};
 `;
 export const LikeIconWrapper = styled.div`
   ${IconWrapperStyles}
-  top:${props=> (props.large? '': '10px')};
-  bottom:${props=> (props.large? '90px': '')};
-  right:10px;
-  
+  top:${props => (props.large ? '' : '10px')};
+  bottom: ${props => (props.large ? '90px' : '')};
+  right: 10px;
 `;
 export const DownIconWrapper = styled(motion.div)`
   ${IconWrapperStyles}
   border:none;
-  width:64px;
-  left:calc(50% - 32px);
-  bottom:${props=> (props.large? '11px': '-41px')};
-  &:hover{
-    background-color:inherit;
-    color:#fff;
+  width: 64px;
+  left: calc(50% - 32px);
+  bottom: ${props => (props.large ? '11px' : '-41px')};
+  &:hover {
+    background-color: inherit;
+    color: #fff;
   }
-  @media ${device.mobileL}{
-    display:none;
+  @media ${device.mobileL} {
+    display: none;
   }
-  
 `;
-

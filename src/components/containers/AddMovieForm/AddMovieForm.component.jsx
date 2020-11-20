@@ -29,7 +29,7 @@ const AddMovieForm = ({onClose}) => {
   const [isFileLoaded, setIsFileLoaded] = useState(false);
   const [loadedFiles, setLoadedFiles] = useState([]);
   const {movies, refreshMyMovies} = useContext(MoviesContext);
-  const {register, handleSubmit, errors, formState,setValue,trigger} = useForm({
+  const {register, handleSubmit, errors, formState, setValue, trigger} = useForm({
     resolver: yupResolver(schema),
     mode: 'onChange',
   });
@@ -54,7 +54,6 @@ const AddMovieForm = ({onClose}) => {
   };
 
   useEffect(() => {
-
     return () => {};
   }, [loadedFiles]);
 

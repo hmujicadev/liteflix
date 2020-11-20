@@ -65,7 +65,11 @@ const FeaturedSection = ({featuredMovie}) => {
             <FeaturedOptionMobile
               animate="visible"
               initial={'initial'}
-              variants={{...commonVariants(2.5), initial: {x: 100} , visible: {x: 0,transition:{duration:2}}}}>
+              variants={{
+                ...commonVariants(2.5),
+                initial: {x: 100},
+                visible: {x: 0, transition: {duration: 2}},
+              }}>
               <FaPlus />
             </FeaturedOptionMobile>
           </FeaturedOptionsWrapper>

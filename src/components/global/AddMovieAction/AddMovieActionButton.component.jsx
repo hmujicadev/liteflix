@@ -3,8 +3,6 @@ import {bool} from 'prop-types';
 import {
   AddMovieButtonWrapper,
   AddMovieButton,
-  AddMovieButtonImageWrapper,
-  AddMovieButtonImage,
   AddMovieButtonText,
 } from './AddMovieActionButton.styles';
 import {MoviesContext} from '../../../context/moviesContext';

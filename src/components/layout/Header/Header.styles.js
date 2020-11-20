@@ -54,8 +54,8 @@ export const NavBarItem = styled.li`
   &:first-child {
     font-weight: bold;
   }
-  &:nth-child(n):hover{
-    color:gray;
+  &:nth-child(n):hover {
+    color: gray;
   }
 `;
 export const MenuWrapper = styled.div`

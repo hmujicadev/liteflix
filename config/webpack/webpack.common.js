@@ -58,7 +58,7 @@ module.exports = {
     new CleanWebpackPlugin({}),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../../public', 'index.html'),
-      favicon: path.resolve(__dirname, '../../public', 'liteflix.ico')
+      favicon: path.resolve(__dirname, '../../public', 'liteflix.ico'),
     }),
   ],
   devServer: {

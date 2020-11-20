@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {device} from '../../../styles/media'
+import {device} from '../../../styles/media';
 
 export const AddMovieFormWrapper = styled.div`
   background-color: ${({success}) => (success ? '#7ed321' : '#fff')};
@@ -7,15 +7,16 @@ export const AddMovieFormWrapper = styled.div`
   border-radius: 10px;
   padding: 40px 40px 25px 40px;
   transition: all 300ms ease;
-  @media ${device.mobileL}{
-    width:100%;
+  @media ${device.mobileL} {
+    width: 94vw;
+    margin: 0 auto;
+    padding: 3vw;
   }
 `;
 
 export const MovieForm = styled.form`
-  padding-top: 30px;
-  @media ${device.mobileL}{
-    width:10px;
+  @media ${device.mobileL} {
+    padding: 30px 15px 0 15px;
   }
 `;
 
@@ -25,6 +26,10 @@ export const InputFormWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
   margin-bottom: 40px;
+
+  @media ${device.mobileL} {
+    grid-template-columns: 1fr;
+  }
 `;
 export const UploadMovieButtonWrapper = styled.div`
   width: 100%;
@@ -42,6 +47,10 @@ export const UploadMovieButton = styled.button`
   &:disabled {
     cursor: not-allowed;
     background-color: #dedede;
+  }
+
+  @media ${device.mobileL} {
+    width: 100%;
   }
 `;
 

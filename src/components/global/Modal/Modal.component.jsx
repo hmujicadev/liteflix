@@ -7,9 +7,9 @@ const Modal = ({children, isOpen = true, setOpen}) => {
   return (
     <>
       {isOpen ? (
-        <ModalWrapper onClick={e => setOpen(false)}>
+        <ModalWrapper onClick={() => setOpen(false)}>
           <StyledModal onClick={e => e.stopPropagation()}>
-            <ModalCloseWrapper onClick={e => setOpen(false)}>
+            <ModalCloseWrapper onClick={() => setOpen(false)}>
               <VscClose />
             </ModalCloseWrapper>
             <ModalContent>{children}</ModalContent>

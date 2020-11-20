@@ -82,7 +82,7 @@ export const MOVIE_CATEGORIES = [
 export const MENU_USER_ITEMS = [
   {
     id: 1,
-    activeUser:true,
+    activeUser: true,
     userProfile: true,
     variant: 'pink',
     padding: '5px 0 5px 6px',
@@ -120,7 +120,7 @@ export const MENU_USER_ITEMS = [
   {
     id: 4,
     borderb: true,
-    height:"28px",
+    height: '28px',
     userProfile: false,
     margin: '10px 0 0 0',
     font: '12px',
@@ -131,7 +131,7 @@ export const MENU_USER_ITEMS = [
   {
     id: 5,
     borderb: true,
-    height:"28px",
+    height: '28px',
     userProfile: false,
     margin: '10px 0 0 0',
     font: '12px',
@@ -142,13 +142,13 @@ export const MENU_USER_ITEMS = [
   {
     id: 6,
     borderb: true,
-    height:"28px",
+    height: '28px',
     userProfile: false,
     margin: '10px 0 0 0',
     font: '12px',
     padding: '10px 0',
     color: '#000',
     name: 'Log Out',
-    weight:"bold"
+    weight: 'bold',
   },
 ];
