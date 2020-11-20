@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 
-export const AddMovieButtonWrapper = styled(motion.div)``;
+export const AddMovieButtonWrapper = styled(motion.div)`
+outline:none;
+`;
 
 export const AddMovieButton = styled(motion.button)`
   width: ${({animated}) => (animated ? 0 : '174px')};
@@ -15,6 +17,7 @@ export const AddMovieButton = styled(motion.button)`
   align-items: center;
   padding: 10px 12px;
   cursor: pointer;
+  outline:none;
 `;
 
 export const AddMovieButtonImage = styled.img`
