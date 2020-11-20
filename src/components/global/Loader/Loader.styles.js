@@ -1,6 +1,5 @@
-import  styled, {keyframes}  from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import {device} from '../../../styles/media';
-
 
 const rotate = keyframes`
   from {
@@ -21,8 +20,8 @@ export const SpinnerWrapper = styled.div`
 
 export const Spinner = styled.img`
   animation: ${rotate} 2s linear infinite;
-  max-width:100px;
-  @media ${device.mobileL}{
-    max-width:70px;
+  max-width: 100px;
+  @media ${device.mobileL} {
+    max-width: 70px;
   }
 `;

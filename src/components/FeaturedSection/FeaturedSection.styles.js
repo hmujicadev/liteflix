@@ -59,7 +59,7 @@ export const FeaturedContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 109px 0 0 0;
+  padding: 15% 0 0 0;
   @media ${device.laptop} {
     align-items: center;
   }
@@ -144,7 +144,6 @@ export const FeaturedOptionMobile = styled(motion.button)`
   background-color: inherit;
   cursor: pointer;
 
-
   @media ${device.mobileL} {
     display: block;
   }
@@ -157,9 +156,8 @@ export const FeaturedSubTitle = styled.span`
   font-weight: bold;
 `;
 export const OverviewWrapper = styled(motion.div)`
-  
-  opacity:0;
-  max-width: 60%;
+  opacity: 0;
+  max-width: 40%;
   min-height: 168px;
   max-height: 168px;
   display: flex;
@@ -167,6 +165,9 @@ export const OverviewWrapper = styled(motion.div)`
   margin: 0 0 17px 0;
   @media ${device.laptop} {
     display: none;
+  }
+  @media ${device.mobileL} {
+    max-width: 60%;
   }
 `;
 export const Overview = styled.p`

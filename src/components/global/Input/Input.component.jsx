@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
 import {string, array, func, oneOf} from 'prop-types';
 import {
   InputWrapper,
@@ -9,9 +9,8 @@ import {
   SelectOptionsItem,
 } from './Input.styles';
 
-const Input = React.forwardRef(({type, label, name, placeholder, options, errorMessage, setSelectValue }, ref) => {
+const Input = React.forwardRef(({type, label, name, placeholder, options, setSelectValue}, ref) => {
   const [focusSelect, setFocusSelect] = useState(false);
-
 
   const renderInputType = () => {
     switch (type) {
@@ -31,12 +30,14 @@ const Input = React.forwardRef(({type, label, name, placeholder, options, errorM
             />
             <SelectOptionsWrapper show={focusSelect}>
               {options.map(({id, name}) => (
-                <SelectOptionsItem onClick={(e)=>{
-                    setFocusSelect(false)
-                    setSelectValue(name)
-                 
-                    
-                }} key={id}>{name}</SelectOptionsItem>
+                <SelectOptionsItem
+                  onClick={() => {
+                    setFocusSelect(false);
+                    setSelectValue(name);
+                  }}
+                  key={id}>
+                  {name}
+                </SelectOptionsItem>
               ))}
             </SelectOptionsWrapper>
           </SelectWrapper>
@@ -49,7 +50,7 @@ const Input = React.forwardRef(({type, label, name, placeholder, options, errorM
   return (
     <InputWrapper>
       <LabelForm>{label}</LabelForm>
-        {renderInputType()}
+      {renderInputType()}
     </InputWrapper>
   );
 });
@@ -66,7 +67,7 @@ Input.propTypes = {
   placeholder: string,
   errorMessage: string,
   options: array,
-  setSelectValue:func
+  setSelectValue: func,
 };
 
 export default Input;

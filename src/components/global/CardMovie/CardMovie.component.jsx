@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {string, bool, object} from 'prop-types';
 import {
   CardMovieImage,
   CardMovieWrapper,
@@ -27,8 +28,8 @@ const CardMovie = ({src, movie, large, custom, animate, initial, variants}) => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: .4
-      }
+        duration: 0.4,
+      },
     },
   };
   return (
@@ -64,6 +65,16 @@ const CardMovie = ({src, movie, large, custom, animate, initial, variants}) => {
       </CardMovieInfoWrapper>
     </CardMovieWrapper>
   );
+};
+
+CardMovie.propTypes = {
+  src: string,
+  movie: object,
+  large: bool,
+  custom: string,
+  animate: string,
+  initial: string,
+  variants: object,
 };
 
 export default CardMovie;

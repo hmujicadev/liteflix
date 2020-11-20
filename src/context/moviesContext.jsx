@@ -1,4 +1,4 @@
-import React, {createContext, useState, useEffect} from 'react';
+import React, {createContext, useState} from 'react';
 import {arrayOf, oneOfType, node} from 'prop-types';
 import {
   getFeaturedMovie,
@@ -6,14 +6,12 @@ import {
   getPopularMovies,
   saveLocalMovies,
   getLocalMovies,
-  
 } from '../services';
 
 export const MoviesContext = createContext();
 
 /* Componente principal, para manejo del estado por context */
 const MoviesProvider = ({children}) => {
-  const [isOnline, setIsOnline] = useState(window.navigator.onLine);
   const [loading, setLoading] = useState(true);
   const [openModal, setOpenModal] = useState(false);
   const [movies, setMovies] = useState();
@@ -23,9 +21,9 @@ const MoviesProvider = ({children}) => {
       const featured = await getFeaturedMovie();
       const upcoming = await getUpcomingMovies();
       const popular = await getPopularMovies();
-      const myMovies = getLocalMovies().length ? getLocalMovies(): [];
+      const myMovies = getLocalMovies().length ? getLocalMovies() : [];
       setMovies({
-        featured: featured.data.results[2],
+        featured: featured.data.results[0],
         upcoming: upcoming.data.results.slice(0, 4),
         popular: popular.data.results.slice(0, 4),
         myMovies,
@@ -37,13 +35,12 @@ const MoviesProvider = ({children}) => {
       console.log(error.message);
       return;
     }
-
   };
   const refreshMyMovies = newMovie => {
     let myNewMovies =
       movies.myMovies.length <= 3
         ? [newMovie, ...movies.myMovies]
-        : [newMovie, ...movies.myMovies.slice(0,3)];
+        : [newMovie, ...movies.myMovies.slice(0, 3)];
     setMovies({
       ...movies,
       myMovies: myNewMovies,
@@ -59,7 +56,7 @@ const MoviesProvider = ({children}) => {
         loadMovies,
         refreshMyMovies,
         openModal,
-        setOpenModal
+        setOpenModal,
       }}>
       {children}
     </MoviesContext.Provider>

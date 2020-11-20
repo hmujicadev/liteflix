@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {device} from '../../../styles/media';
 
 export const BrandWrapper = styled.div`
-  transition:all 300ms ease;
+  transition: all 300ms ease;
 
   @media ${device.tablet} {
     transform: ${({sidebarOpen}) => (sidebarOpen ? 'translate(calc(-36vw))' : 'translate(0px)')};
@@ -14,7 +14,6 @@ export const BrandWrapper = styled.div`
   @media ${device.mobileS} {
     transform: ${({sidebarOpen}) => (sidebarOpen ? 'translate(calc(-20vw))' : 'translate(0px)')};
   }
-
 `;
 
 export const BrandImage = styled.img`
