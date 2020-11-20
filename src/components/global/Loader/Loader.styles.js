@@ -12,6 +12,7 @@ const rotate = keyframes`
 `;
 
 export const SpinnerWrapper = styled.div`
+
   width: 100%;
   display: flex;
   justify-content: center;

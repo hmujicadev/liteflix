@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+import {AnimatePresence, motion} from 'framer-motion';
 
-export const ModalWrapper = styled.div`
+export const AnimatedModalPresence = styled(AnimatePresence)``;
+
+export const ModalWrapper = styled(motion.div)`
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
   z-index: 99;
