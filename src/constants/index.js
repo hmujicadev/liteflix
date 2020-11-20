@@ -141,7 +141,6 @@ export const MENU_USER_ITEMS = [
   },
   {
     id: 6,
-    borderb: true,
     height: '28px',
     userProfile: false,
     margin: '10px 0 0 0',

@@ -60,6 +60,7 @@ export const FeaturedContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 15% 0 0 0;
+  overflow: hidden;
   @media ${device.laptop} {
     align-items: center;
   }
@@ -113,6 +114,7 @@ export const FeaturedOption = styled(motion.button)`
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
+  outline: none;
   cursor: pointer;
   &:nth-child(2) {
     margin: 0 30px 0 0;
@@ -143,7 +145,7 @@ export const FeaturedOptionMobile = styled(motion.button)`
   display: none;
   background-color: inherit;
   cursor: pointer;
-
+  outline: none;
   @media ${device.mobileL} {
     display: block;
   }
