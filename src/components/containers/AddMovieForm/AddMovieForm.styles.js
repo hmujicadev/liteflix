@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {device} from '../../../styles/media'
 
 export const AddMovieFormWrapper = styled.div`
   background-color: ${({success}) => (success ? '#7ed321' : '#fff')};
@@ -6,10 +7,16 @@ export const AddMovieFormWrapper = styled.div`
   border-radius: 10px;
   padding: 40px 40px 25px 40px;
   transition: all 300ms ease;
+  @media ${device.mobileL}{
+    width:100%;
+  }
 `;
 
 export const MovieForm = styled.form`
   padding-top: 30px;
+  @media ${device.mobileL}{
+    width:10px;
+  }
 `;
 
 export const InputFormWrapper = styled.div`

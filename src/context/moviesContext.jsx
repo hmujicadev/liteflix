@@ -6,6 +6,7 @@ import {
   getPopularMovies,
   saveLocalMovies,
   getLocalMovies,
+  
 } from '../services';
 
 export const MoviesContext = createContext();
@@ -14,6 +15,7 @@ export const MoviesContext = createContext();
 const MoviesProvider = ({children}) => {
   const [isOnline, setIsOnline] = useState(window.navigator.onLine);
   const [loading, setLoading] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const [movies, setMovies] = useState();
   const loadMovies = async () => {
     try {
@@ -23,7 +25,7 @@ const MoviesProvider = ({children}) => {
       const popular = await getPopularMovies();
       const myMovies = getLocalMovies().length ? getLocalMovies(): [];
       setMovies({
-        featured: featured.data.results[0],
+        featured: featured.data.results[2],
         upcoming: upcoming.data.results.slice(0, 4),
         popular: popular.data.results.slice(0, 4),
         myMovies,
@@ -41,8 +43,7 @@ const MoviesProvider = ({children}) => {
     let myNewMovies =
       movies.myMovies.length <= 3
         ? [newMovie, ...movies.myMovies]
-        : [newMovie, ...movies.myMovies.slice(0, 1)];
-
+        : [newMovie, ...movies.myMovies.slice(0,3)];
     setMovies({
       ...movies,
       myMovies: myNewMovies,
@@ -56,7 +57,9 @@ const MoviesProvider = ({children}) => {
         movies,
         loading,
         loadMovies,
-        refreshMyMovies
+        refreshMyMovies,
+        openModal,
+        setOpenModal
       }}>
       {children}
     </MoviesContext.Provider>

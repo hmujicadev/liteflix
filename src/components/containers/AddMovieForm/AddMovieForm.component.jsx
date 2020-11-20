@@ -29,19 +29,19 @@ const AddMovieForm = ({onClose}) => {
   const [isFileLoaded, setIsFileLoaded] = useState(false);
   const [loadedFiles, setLoadedFiles] = useState([]);
   const {movies, refreshMyMovies} = useContext(MoviesContext);
-  const {register, handleSubmit, errors, formState} = useForm({
+  const {register, handleSubmit, errors, formState,setValue,trigger} = useForm({
     resolver: yupResolver(schema),
     mode: 'onChange',
   });
+  const setMovieCategory = category => {
+    setValue('movieCategory', category);
+    trigger('movieCategory');
+  };
   const onSubmit = async data => {
     let reader = new FileReader();
     reader.readAsDataURL(loadedFiles[0]);
     reader.onload = function () {
       let base64img = reader.result;
-      console.log({
-        ...data,
-        image: base64img,
-      });
       let refreshResponse = refreshMyMovies({
         ...data,
         image: base64img,
@@ -54,7 +54,7 @@ const AddMovieForm = ({onClose}) => {
   };
 
   useEffect(() => {
-    console.log('UE', loadedFiles);
+
     return () => {};
   }, [loadedFiles]);
 
@@ -78,6 +78,7 @@ const AddMovieForm = ({onClose}) => {
               <Input
                 name="movieCategory"
                 type="select"
+                setSelectValue={setMovieCategory}
                 options={MOVIE_CATEGORIES}
                 ref={register}
                 label="CATEGORÍA"

@@ -1,27 +1,23 @@
 import styled from 'styled-components';
-import {device} from '../../styles/media'
-import {motion} from 'framer-motion'
+import {device} from '../../styles/media';
 
-export const UpcomingContainer = styled.div`
-  max-width:1200px;
-  width:100%;
+
+export const MyMoviesSectionWrapper = styled.div`
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto 40px auto;
-  height:auto;
-  z-index: 4;
-  @media ${device.mobileL}{
-      width:auto;
-      padding:0 15px;
-    }
+  @media ${device.mobileL} {
+    width: auto;
+    padding: 0 15px;
+  }
 `;
-
-export const UpcomingSubTitle = styled(motion.h3)`
-  font-size:20px;
-  color:#fff;
+export const MyMoviesSectionTitle = styled.h3`
+  font-size: 20px;
+  color: #fff;
   font-weight: bold;
-  margin:0 0 10px 2px;
-`
-
-export const UpcomingCardWrapper  = styled(motion.div)`
+  margin: 0 0 10px 0;
+`;
+export const MyMoviesCardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 255px);
   grid-template-rows:minmax(auto,155px);
@@ -41,4 +37,4 @@ export const UpcomingCardWrapper  = styled(motion.div)`
       grid-template-columns: 100%;
       grid-template-rows:auto;
     }
-`
+`;

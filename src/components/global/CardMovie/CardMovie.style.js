@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {device} from '../../../styles/media';
-
+import {motion} from 'framer-motion'
+ 
 const IconWrapperStyles = {
   position: 'absolute',
   borderRadius: '50%',
@@ -20,11 +21,12 @@ const IconWrapperStyles = {
       background-color:#fff;}`,
 };
 
-export const CardMovieWrapper = styled.div`
+export const CardMovieWrapper = styled(motion.div)`
   align-self:stretch;
   justify-self:stretch;
   position: relative;
   cursor: pointer;
+  transition: all 300ms ease;
 `;
 
 export const CardMovieImage = styled.img`
@@ -53,9 +55,13 @@ export const CardMovieInfoWrapper = styled.div`
   }
 `;
 export const CardMovieInfoTitle = styled.h3`
-  max-width:${props=> (props.large? '108px': 'auto')};  
+  max-width:${props=> (props.large? '50%': 'auto')};
+  width:${props=> (props.large? '50%': 'auto')};   
   font-size: ${props=> (props.large? '18px': '16px')};  
   color: #fff;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
   font-weight: bold;
   margin:${props=> (props.large? '0 0 0 12px': '0 0 0 10px')};
 `;
@@ -94,7 +100,7 @@ export const LikeIconWrapper = styled.div`
   right:10px;
   
 `;
-export const DownIconWrapper = styled.div`
+export const DownIconWrapper = styled(motion.div)`
   ${IconWrapperStyles}
   border:none;
   width:64px;

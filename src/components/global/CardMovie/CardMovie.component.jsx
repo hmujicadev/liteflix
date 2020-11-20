@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   CardMovieImage,
   CardMovieWrapper,
@@ -9,21 +9,42 @@ import {
   PlayIconWrapper,
   PlussIconWrapper,
   LikeIconWrapper,
-  DownIconWrapper
+  DownIconWrapper,
 } from './CardMovie.style';
 import {BiLike} from 'react-icons/bi';
 import {FiPlay} from 'react-icons/fi';
 import {GoPlus} from 'react-icons/go';
-import {BsChevronDown} from 'react-icons/bs'
+import {BsChevronDown} from 'react-icons/bs';
 
-const CardMovie = ({src, movie, large}) => {
+const CardMovie = ({src, movie, large, custom, animate, initial, variants}) => {
+  const [cardHover, setCardHover] = useState(false);
+  const arrowVariants = {
+    initial: {
+      y: -50,
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: .4
+      }
+    },
+  };
   return (
-    <CardMovieWrapper>
+    <CardMovieWrapper
+      onMouseEnter={() => setCardHover(true)}
+      onMouseLeave={() => setCardHover(false)}
+      custom={custom}
+      animate={animate}
+      initial={initial}
+      variants={variants}>
       <CardMovieImage src={src} />
       <CardMovieInfoWrapper>
-        <CardMovieInfoTitle large={large}>{movie.title}</CardMovieInfoTitle>
+        <CardMovieInfoTitle large={large}>{movie.title || movie.movieName}</CardMovieInfoTitle>
         <CardMovieInfo large={large}>
-          98% Coincidencia <CardMovieInfoPG>+16</CardMovieInfoPG> 1h 30 min suspenso
+          98% Coincidencia <CardMovieInfoPG>+16</CardMovieInfoPG> 1h 30 min{' '}
+          {movie.movieCategory || 'suspenso'}
         </CardMovieInfo>
         <PlayIconWrapper large={large}>
           <FiPlay />
@@ -34,9 +55,12 @@ const CardMovie = ({src, movie, large}) => {
         <PlussIconWrapper large={large}>
           <GoPlus />
         </PlussIconWrapper>
-        <DownIconWrapper large={large}>
-          <BsChevronDown size='43px'/>
-          </DownIconWrapper>
+        <DownIconWrapper
+          animate={cardHover ? 'visible' : 'initial'}
+          variants={arrowVariants}
+          large={large}>
+          <BsChevronDown size="43px" />
+        </DownIconWrapper>
       </CardMovieInfoWrapper>
     </CardMovieWrapper>
   );
