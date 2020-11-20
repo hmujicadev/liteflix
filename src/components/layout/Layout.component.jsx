@@ -1,17 +1,30 @@
 import React, {useContext} from 'react';
 import Header from './Header/Header.component';
 import {arrayOf, oneOfType, node} from 'prop-types';
-import {MainLoaderWrapper,MainWrapper} from './Layout.styles';
+import {MainLoaderWrapper, MainWrapper, AnimatePresenceStyled} from './Layout.styles';
 import Loader from '../global/Loader/Loader.component';
 import {MoviesContext} from '../../context/moviesContext';
 
 const Layout = ({children}) => {
   const {loading} = useContext(MoviesContext);
 
+  const mainVariants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      scale: 1,
+      opacity: 1,
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
+
   return (
-    <>
+    <AnimatePresenceStyled>
       {loading ? (
-        <MainLoaderWrapper>
+        <MainLoaderWrapper key={'PageAnimation'} {...mainVariants}>
           <Loader />
         </MainLoaderWrapper>
       ) : (
@@ -20,7 +33,7 @@ const Layout = ({children}) => {
           <MainWrapper>{children}</MainWrapper>
         </>
       )}
-    </>
+    </AnimatePresenceStyled>
   );
 };
 
