@@ -9,14 +9,9 @@ import {
   SelectOptionsItem,
 } from './Input.styles';
 
-const Input = React.forwardRef(({type, label, name, placeholder, options, errorMessage}, ref) => {
+const Input = React.forwardRef(({type, label, name, placeholder, options, errorMessage, setSelectValue }, ref) => {
   const [focusSelect, setFocusSelect] = useState(false);
-  const [categorySelected, setcategorySelected] = useState('');
-  
-  useEffect(()=>{
-      console.log('category',categorySelected)
 
-  },[categorySelected])
 
   const renderInputType = () => {
     switch (type) {
@@ -27,17 +22,21 @@ const Input = React.forwardRef(({type, label, name, placeholder, options, errorM
           <SelectWrapper>
             <InputForm
               onFocus={() => setFocusSelect(true)}
-              onBlur={() => setFocusSelect(false)}
+              id={name}
               ref={ref}
               name={name}
               readOnly
-              value={categorySelected}
               placeholder={placeholder}
               type="text"
             />
             <SelectOptionsWrapper show={focusSelect}>
               {options.map(({id, name}) => (
-                <SelectOptionsItem onClick={(e)=>(console.log(e))} key={id}>{name}</SelectOptionsItem>
+                <SelectOptionsItem onClick={(e)=>{
+                    setFocusSelect(false)
+                    setSelectValue(name)
+                 
+                    
+                }} key={id}>{name}</SelectOptionsItem>
               ))}
             </SelectOptionsWrapper>
           </SelectWrapper>
@@ -67,6 +66,7 @@ Input.propTypes = {
   placeholder: string,
   errorMessage: string,
   options: array,
+  setSelectValue:func
 };
 
 export default Input;

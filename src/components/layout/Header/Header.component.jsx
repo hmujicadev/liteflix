@@ -14,14 +14,24 @@ import UserMenu from './UserMenu/UserMenu.component';
 import Sidebar from './Sidebar/Sidebar.component';
 import {IoIosMenu} from 'react-icons/io';
 import SpanText from '../../../components/global/SpanText/SpanText.component';
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
-const Header = () => {
+
+const Header = ({setOpenModal}) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleOpen = () => setSidebarOpen(!sidebarOpen);
 
+  const [scrollOnTop, setScrollOnTop] = useState(true)
+
+  useScrollPosition(({ prevPos, currPos }) => {
+    if(scrollOnTop!=currPos.y<-50)
+    (currPos.y<0)?setScrollOnTop(true):setScrollOnTop(false);
+    console.log(scrollOnTop)
+  }, [scrollOnTop])
+ 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper scrollOnTop={scrollOnTop}>
       <StyledHeader>
         <NavBar>
           <MenuWrapper onClick={() => toggleOpen()}>

@@ -3,7 +3,6 @@ import {device} from '../../../styles/media';
 
 export const BrandWrapper = styled.div`
   line-height: 4.5;
-  width: 95;
   transition:all 300ms ease;
 
   @media ${device.tablet} {

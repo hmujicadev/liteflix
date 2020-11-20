@@ -2,28 +2,27 @@ import styled from 'styled-components';
 import {device} from '../../../styles/media';
 
 export const HeaderWrapper = styled.div`
-  max-width: 1200px;
   width:100%;
   height: 60px;
-  padding: 10px 0 0 0;
   margin: 0 auto;
-  position: relative;
+  position: fixed;
   z-index: 10;
   display:flex;
-  @media ${device.mobileL}{
+  justify-content:center;
+  background-color:${({scrollOnTop})=> (scrollOnTop?'rgba(0,0,0,0.84)':'transparent')};
+/*   @media ${device.mobileL}{
       max-width:100%;
       grid-template-columns: repeat(3,255px);
-    }
+    } */
 `;
 
 export const StyledHeader = styled.header`
   width:100%;
   max-width:1200px;
-  background-color: transparent;
   display: flex;
   justify-content: space-between;
   height: inherit;
-  position: fixed;
+  padding: 10px 0 0 0;
   z-index: 15;
 `;
 
@@ -60,7 +59,7 @@ export const MenuWrapper = styled.div`
   display: none;
   height: 70px;
   position: absolute;
-  top:3px;
+  top:15px;
   left: 10px;
   & > svg {
     font-size: 29px;

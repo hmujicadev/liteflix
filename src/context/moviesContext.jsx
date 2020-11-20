@@ -14,6 +14,7 @@ export const MoviesContext = createContext();
 const MoviesProvider = ({children}) => {
   const [isOnline, setIsOnline] = useState(window.navigator.onLine);
   const [loading, setLoading] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const [movies, setMovies] = useState();
   const loadMovies = async () => {
     try {
@@ -41,8 +42,7 @@ const MoviesProvider = ({children}) => {
     let myNewMovies =
       movies.myMovies.length <= 3
         ? [newMovie, ...movies.myMovies]
-        : [newMovie, ...movies.myMovies.slice(0, 1)];
-
+        : [newMovie, ...movies.myMovies.slice(0,3)];
     setMovies({
       ...movies,
       myMovies: myNewMovies,
@@ -56,7 +56,9 @@ const MoviesProvider = ({children}) => {
         movies,
         loading,
         loadMovies,
-        refreshMyMovies
+        refreshMyMovies,
+        openModal,
+        setOpenModal
       }}>
       {children}
     </MoviesContext.Provider>

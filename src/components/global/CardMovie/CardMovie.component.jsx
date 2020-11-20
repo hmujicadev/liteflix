@@ -16,14 +16,14 @@ import {FiPlay} from 'react-icons/fi';
 import {GoPlus} from 'react-icons/go';
 import {BsChevronDown} from 'react-icons/bs'
 
-const CardMovie = ({src, movie, large}) => {
+const CardMovie = ({src, movie, large,}) => {
   return (
     <CardMovieWrapper>
       <CardMovieImage src={src} />
       <CardMovieInfoWrapper>
-        <CardMovieInfoTitle large={large}>{movie.title}</CardMovieInfoTitle>
+        <CardMovieInfoTitle large={large}>{movie.title||movie.movieName}</CardMovieInfoTitle>
         <CardMovieInfo large={large}>
-          98% Coincidencia <CardMovieInfoPG>+16</CardMovieInfoPG> 1h 30 min suspenso
+          98% Coincidencia <CardMovieInfoPG>+16</CardMovieInfoPG> 1h 30 min {movie.movieCategory||'suspenso'}
         </CardMovieInfo>
         <PlayIconWrapper large={large}>
           <FiPlay />

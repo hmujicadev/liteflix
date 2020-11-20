@@ -1,21 +1,23 @@
 import styled from 'styled-components';
 import {device} from '../../../../styles/media';
+import {motion} from 'framer-motion';
 
 export const UserMenuWrapper = styled.div`
-  display:flex;
+  display: flex;
   align-items: center;
   flex: 0 0 11%;
   position: relative;
-  @media ${device.tablet}{
+  @media ${device.tablet} {
     display: none;
   }
-  @media ${device.laptop}{
+  @media ${device.laptop} {
     flex: 0 0 13%;
   }
 `;
 
 export const UserMenuList = styled.ul`
   display: flex;
+  position: relative;
   flex: 0 0 100%;
   align-items: center;
   justify-content: space-between;
@@ -23,32 +25,33 @@ export const UserMenuList = styled.ul`
 `;
 
 export const UserMenuItem = styled.li`
-  position:relative;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 `;
 
-export const DropdownWrapper = styled.div`
-  width: 110px;
-  min-height: 160px;
+export const DropdownWrapper = styled(motion.div)`
+  width: 130px;
+  height: 0;
   background-color: #fff;
   position: absolute;
   top: 60px;
   right: 2px;
-  padding: 10px;
-  border-radius:5px;
+  border-radius: 5px;
   z-index: 15;
+  overflow: hidden;
 `;
 
-export const DropdownUpArrowWrapper = styled.div`
+/* export const DropdownUpArrowWrapper = styled.div`
   position: relative;
   z-index: 10;
-`;
+`; */
 
-export const DropdownUpArrow = styled.div`
+export const DropdownUpArrow = styled(motion.div)`
   width: 16px;
   height: 0px;
+  opacity:0;
   border-left: 15px solid transparent;
   border-right: 17px solid transparent;
   border-bottom: 20px solid #fff;
@@ -56,16 +59,17 @@ export const DropdownUpArrow = styled.div`
   font-size: 0px;
   line-height: 0px;
   position: absolute;
-  top: 7px;
-  right: 0px;
+  top: 48px;
+  right: 5px;
   transform: rotate(87deg);
   z-index: 10;
 `;
 
-export const DropdownList = styled.ul`
+export const DropdownList = styled(motion.ul)`
   display: flex;
   flex-direction: column;
-  color:black;
+  color: black;
+  padding: 10px;
 `;
 
 export const BellAlert = styled.div`
@@ -78,16 +82,14 @@ export const BellAlert = styled.div`
   position: absolute;
 `;
 
-export const DropdownItemWrapper = styled.div``;
+export const DropdownItemWrapper = styled(motion.div)``;
 
-export const DropdownItem = styled.li`
-  min-height:${props=> props.height? props.height:'37px'};
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
-  border-radius:${props=> props.activeUser? '18.5px':'0'};
-  box-shadow:${props=> props.activeUser? '0 0 10px 0 rgba(0, 0, 0, 0.1)':''};
-  border-bottom:${props=> props.borderb? '.5px solid #9b9b9b':'0'};
+export const DropdownItem = styled(motion.li)`
+  min-height: ${props => (props.height ? props.height : '37px')};
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: ${props => (props.activeUser ? '18.5px' : '0')};
+  box-shadow: ${props => (props.activeUser ? '0 0 10px 0 rgba(0, 0, 0, 0.1)' : '')};
+  border-bottom: ${props => (props.borderb ? '.5px solid #9b9b9b' : '0')};
 `;
-
-

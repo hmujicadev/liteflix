@@ -15,9 +15,9 @@ import {
   SidebarNavbarItem,
 } from './Sidebar.styles';
 import UserProfile from '../../../global/UserProfile/UserProfile.component';
+import AddMovieActionButton from '../../../global/AddMovieAction/AddMovieActionButton.component';
 
-const Sidebar = ({isOpen,toggleOpen }) => {
-
+const Sidebar = ({isOpen, toggleOpen}) => {
   return (
     <>
       <SidebarOverlay isOpen={isOpen} onClick={() => toggleOpen()} />
@@ -43,7 +43,9 @@ const Sidebar = ({isOpen,toggleOpen }) => {
               <SidebarNavbarItem>Películas</SidebarNavbarItem>
               <SidebarNavbarItem>Mi lista</SidebarNavbarItem>
               <SidebarNavbarItem>Niños</SidebarNavbarItem>
-              <SidebarNavbarItem>AGREGAR PELICULA BUTTON</SidebarNavbarItem>
+              <SidebarNavbarItem>
+                <AddMovieActionButton animated={false}/>
+              </SidebarNavbarItem>
 
               <SidebarNavbarItem>Log Out</SidebarNavbarItem>
             </SidebarNavbarList>
@@ -56,7 +58,7 @@ const Sidebar = ({isOpen,toggleOpen }) => {
 
 Sidebar.propTypes = {
   isOpen: bool.isRequired,
-  toggleOpen: func.isRequired
+  toggleOpen: func.isRequired,
 };
 
 export default Sidebar;
