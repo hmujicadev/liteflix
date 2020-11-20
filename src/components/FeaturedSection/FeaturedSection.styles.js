@@ -31,7 +31,7 @@ export const FeaturedSectionImage = styled.img`
 `;
 export const FeaturedSectionOverlay = styled.div`
   position: absolute;
-  height: 100vh;
+  height: 200vh;
   width: 100%;
   z-index: 2;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2) 70%, #000000);
@@ -59,10 +59,11 @@ export const FeaturedContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 15% 0 0 0;
+  padding: 10% 0 0 0;
   overflow: hidden;
   @media ${device.laptop} {
     align-items: center;
+    padding: 12% 0 0 0;
   }
   @media ${device.mobileL} {
     position: absolute;
@@ -81,7 +82,7 @@ export const FeaturedPreTitle = styled(motion.span)`
 `;
 export const FeaturedTitle = styled(motion.h2)`
   font-size: 110px;
-  max-width: 50%;
+  max-width: 45%;
   color: #fff;
   line-height: 0.92;
   margin: 0 0 19px 0;
