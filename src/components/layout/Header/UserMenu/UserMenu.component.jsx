@@ -76,16 +76,15 @@ const UserMenu = () => {
           <UserProfile size="25px" margin="0 5px 0 0" />
           <BsChevronDown color="#fff" />
         </UserMenuItem>
-        <DropdownArrowWrapper 
-            onMouseEnter={() => setShowMenuUser(true)}>
-          <DropdownUpArrow
-            animate={showMenuUser ? 'open' : 'closed'}
-            variants={variantsArrow}
-          />
+        <DropdownArrowWrapper onMouseEnter={() => setShowMenuUser(true)}>
+          <DropdownUpArrow animate={showMenuUser ? 'open' : 'closed'} variants={variantsArrow} />
         </DropdownArrowWrapper>
       </UserMenuList>
 
-      <DropdownWrapper onMouseLeave={() => setShowMenuUser(false)} animate={showMenuUser ? 'open' : 'closed'} variants={variants}>
+      <DropdownWrapper
+        onMouseLeave={() => setShowMenuUser(false)}
+        animate={showMenuUser ? 'open' : 'closed'}
+        variants={variants}>
         <DropdownList>
           {MENU_USER_ITEMS.map(
             ({
