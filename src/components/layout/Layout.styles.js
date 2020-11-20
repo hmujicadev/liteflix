@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import {motion, AnimatePresence} from 'framer-motion';
 
-export const MainLoaderWrapper = styled.div`
-  width: 100vw;
+export const MainLoaderWrapper = styled(motion.div)`
+  width: 100%;
   height: 100vh;
   display: grid;
   align-items: center;
@@ -10,6 +11,11 @@ export const MainLoaderWrapper = styled.div`
 `;
 
 export const MainWrapper = styled.div`
+  width: 100%;
+  position: relative;
+`;
+
+export const AnimatePresenceStyled = styled(AnimatePresence)`
   width: 100%;
   position: relative;
 `;

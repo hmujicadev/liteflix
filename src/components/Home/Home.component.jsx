@@ -9,7 +9,7 @@ import Modal from '../global/Modal/Modal.component';
 import AddMovieForm from '../containers/AddMovieForm/AddMovieForm.component';
 
 const Home = () => {
-  const {movies, loadMovies,openModal,setOpenModal} = useContext(MoviesContext);
+  const {movies, loadMovies, openModal, setOpenModal} = useContext(MoviesContext);
   useEffect(() => {
     loadMovies();
   }, []);

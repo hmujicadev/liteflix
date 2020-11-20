@@ -1,13 +1,31 @@
 import React from 'react';
 import {oneOfType, arrayOf, node, func, bool} from 'prop-types';
-import {ModalWrapper, StyledModal, ModalContent, ModalCloseWrapper} from './Modal.styles';
+import {
+  AnimatedModalPresence,
+  ModalWrapper,
+  StyledModal,
+  ModalContent,
+  ModalCloseWrapper,
+} from './Modal.styles';
 import {VscClose} from 'react-icons/vsc';
 
 const Modal = ({children, isOpen = true, setOpen}) => {
+  const modalVariants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      scale: 1,
+      opacity: 1,
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
   return (
-    <>
+    <AnimatedModalPresence>
       {isOpen ? (
-        <ModalWrapper onClick={() => setOpen(false)}>
+        <ModalWrapper key="modalAnimated" {...modalVariants} onClick={() => setOpen(false)}>
           <StyledModal onClick={e => e.stopPropagation()}>
             <ModalCloseWrapper onClick={() => setOpen(false)}>
               <VscClose />
@@ -16,7 +34,7 @@ const Modal = ({children, isOpen = true, setOpen}) => {
           </StyledModal>
         </ModalWrapper>
       ) : null}
-    </>
+    </AnimatedModalPresence>
   );
 };
 
