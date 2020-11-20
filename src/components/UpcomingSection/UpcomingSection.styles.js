@@ -21,7 +21,7 @@ export const UpcomingSubTitle = styled(motion.h3)`
   margin:0 0 10px 2px;
 `
 
-export const UpcomingCardWrapper  = styled.div`
+export const UpcomingCardWrapper  = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(4, 255px);
   grid-template-rows:minmax(auto,155px);
