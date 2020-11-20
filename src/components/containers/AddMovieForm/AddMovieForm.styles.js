@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import {device} from '../../../styles/media';
+import {motion} from 'framer-motion';
 
-export const AddMovieFormWrapper = styled.div`
+export const AddMovieFormWrapper = styled(motion.div)`
   background-color: ${({success}) => (success ? '#7ed321' : '#fff')};
   width: 650px;
   border-radius: 10px;
