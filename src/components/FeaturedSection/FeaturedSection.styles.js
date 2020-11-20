@@ -114,7 +114,7 @@ export const FeaturedOption = styled(motion.button)`
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
-  outline:none;
+  outline: none;
   cursor: pointer;
   &:nth-child(2) {
     margin: 0 30px 0 0;
@@ -145,7 +145,7 @@ export const FeaturedOptionMobile = styled(motion.button)`
   display: none;
   background-color: inherit;
   cursor: pointer;
-  outline:none;
+  outline: none;
   @media ${device.mobileL} {
     display: block;
   }

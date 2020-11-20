@@ -21,9 +21,8 @@ const Modal = ({children, isOpen = true, setOpen}) => {
       transition: {type: 'spring', restSpeed: 0.5},
     },
     exit: {
-      scale:0.8,
+      scale: 0.8,
       opacity: 0,
-   
     },
   };
   return (
