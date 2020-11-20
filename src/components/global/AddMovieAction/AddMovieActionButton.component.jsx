@@ -44,11 +44,13 @@ const AddMovieActionButton = ({animated}) => {
     variants: variants,
     onMouseEnter: () => setExpandButton(true),
     onMouseLeave: () => setExpandButton(false),
-    onClick: () => setOpenModal(true),
   };
   return (
     <AddMovieButtonWrapper>
-      <AddMovieButton animated={animated} {...(animated ? {...animatedProps} : {})}>
+      <AddMovieButton
+        onClick={() => setOpenModal(true)}
+        animated={animated}
+        {...(animated ? {...animatedProps} : {})}>
         <FaPlus color="#fff" size="16px" />
         <AddMovieButtonText animated={animated} {...(animated ? {variants: variantsText} : {})}>
           Agregar Película

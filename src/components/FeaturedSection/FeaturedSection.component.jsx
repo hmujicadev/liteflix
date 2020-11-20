@@ -12,7 +12,8 @@ import {
   OverviewWrapper,
   Overview,
   FeaturedSubTitle,
-  FeaturedOptionMobile
+  FeaturedOptionMobile,
+  FeaturedSectionImageWrapper,
 } from './FeaturedSection.styles';
 import {IMAGES_URL} from '../../constants';
 import {FiPlay} from 'react-icons/fi';
@@ -20,34 +21,56 @@ import {FaPlus} from 'react-icons/fa';
 import SpanText from '../global/SpanText/SpanText.component';
 
 const FeaturedSection = ({featuredMovie}) => {
-  console.log('Featured', featuredMovie);
+  const commonVariants = duration => ({
+    initial: {
+      opacity: 0,
+      y: -70,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration,
+      },
+    },
+  });
+
   return (
     <>
       <FeaturedSectionWrapper>
         <FeaturedSectionOverlay />
-        <FeaturedSectionImage src={`${IMAGES_URL}/original/${featuredMovie.backdrop_path}`} />
+        <FeaturedSectionImageWrapper>
+          <FeaturedSectionImage src={`${IMAGES_URL}/original/${featuredMovie.backdrop_path}`} />
+        </FeaturedSectionImageWrapper>
         <FeaturedContainer>
-          <FeaturedPreTitle>
+          <FeaturedPreTitle animate="visible" initial={'initial'} variants={commonVariants(1.6)}>
             ORIGINAL DE <strong>LITEFLIX</strong>
           </FeaturedPreTitle>
-          <FeaturedTitle>{featuredMovie.title}</FeaturedTitle>
+          <FeaturedTitle animate={'visible'} initial={'initial'} variants={commonVariants(2.2)}>
+            {featuredMovie.title}
+          </FeaturedTitle>
           <FeaturedOptionsWrapper>
-            <FeaturedOption>
+            <FeaturedOption animate="visible" initial={'initial'} variants={commonVariants(2.5)}>
               <FiPlay />
-              <SpanText font='16px' color="#fff" padding="0 0 0 10px">
+              <SpanText font="16px" color="#fff" padding="0 0 0 10px">
                 Reproducir
               </SpanText>
             </FeaturedOption>
-            <FeaturedOption>
+            <FeaturedOption animate="visible" initial={'initial'} variants={commonVariants(2.5)}>
               <FaPlus />
-              <SpanText font='16px' color="#fff" padding="0 0 0 10px">
+              <SpanText font="16px" color="#fff" padding="0 0 0 10px">
                 Mi lista
               </SpanText>
             </FeaturedOption>
-            <FeaturedOptionMobile><FaPlus /></FeaturedOptionMobile>
+            <FeaturedOptionMobile
+              animate="visible"
+              initial={'initial'}
+              variants={{...commonVariants(2.5), initial: {x: 100} , visible: {x: 0,transition:{duration:2}}}}>
+              <FaPlus />
+            </FeaturedOptionMobile>
           </FeaturedOptionsWrapper>
 
-          <OverviewWrapper>
+          <OverviewWrapper initial={'initial'} animate="visible" variants={commonVariants(2.2)}>
             <FeaturedSubTitle margin="0 0 10px 0">Ver Temporada 1</FeaturedSubTitle>
             <Overview>{featuredMovie.overview}</Overview>
           </OverviewWrapper>

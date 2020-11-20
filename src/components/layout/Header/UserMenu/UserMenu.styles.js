@@ -36,18 +36,19 @@ export const DropdownWrapper = styled(motion.div)`
   height: 0;
   background-color: #fff;
   position: absolute;
-  top: 60px;
+  top: 50px;
   right: 2px;
   border-radius: 5px;
   z-index: 15;
   overflow: hidden;
 `;
 
-/* export const DropdownUpArrowWrapper = styled.div`
-  position: relative;
-  z-index: 10;
-`; */
-
+export const DropdownArrowWrapper = styled.li`
+  height: 20px;
+  width: 100%;
+  position: absolute;
+  top: 30px;
+`
 export const DropdownUpArrow = styled(motion.div)`
   width: 16px;
   height: 0px;
@@ -59,7 +60,7 @@ export const DropdownUpArrow = styled(motion.div)`
   font-size: 0px;
   line-height: 0px;
   position: absolute;
-  top: 48px;
+  top: 20px;
   right: 5px;
   transform: rotate(87deg);
   z-index: 10;
@@ -92,4 +93,5 @@ export const DropdownItem = styled(motion.li)`
   border-radius: ${props => (props.activeUser ? '18.5px' : '0')};
   box-shadow: ${props => (props.activeUser ? '0 0 10px 0 rgba(0, 0, 0, 0.1)' : '')};
   border-bottom: ${props => (props.borderb ? '.5px solid #9b9b9b' : '0')};
+  cursor:pointer;
 `;

@@ -2,27 +2,27 @@ import styled from 'styled-components';
 import {device} from '../../../styles/media';
 
 export const HeaderWrapper = styled.div`
-  width:100%;
-  height: 60px;
+  width: 100%;
   margin: 0 auto;
   position: fixed;
   z-index: 10;
-  display:flex;
-  justify-content:center;
-  background-color:${({scrollOnTop})=> (scrollOnTop?'rgba(0,0,0,0.84)':'transparent')};
-/*   @media ${device.mobileL}{
+  display: flex;
+  justify-content: center;
+  background-color: ${({scrollOnTop}) => (scrollOnTop ? 'rgba(0,0,0,0.84)' : 'transparent')};
+
+  padding: 10px 0;
+  /*   @media ${device.mobileL}{
       max-width:100%;
       grid-template-columns: repeat(3,255px);
     } */
 `;
 
 export const StyledHeader = styled.header`
-  width:100%;
-  max-width:1200px;
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   height: inherit;
-  padding: 10px 0 0 0;
   z-index: 15;
 `;
 
@@ -54,12 +54,15 @@ export const NavBarItem = styled.li`
   &:first-child {
     font-weight: bold;
   }
+  &:nth-child(n):hover{
+    color:gray;
+  }
 `;
 export const MenuWrapper = styled.div`
   display: none;
   height: 70px;
   position: absolute;
-  top:15px;
+  top: 10px;
   left: 10px;
   & > svg {
     font-size: 29px;

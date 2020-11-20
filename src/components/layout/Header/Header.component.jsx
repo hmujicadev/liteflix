@@ -27,7 +27,6 @@ const Header = ({setOpenModal}) => {
   useScrollPosition(({ prevPos, currPos }) => {
     if(scrollOnTop!=currPos.y<-50)
     (currPos.y<0)?setScrollOnTop(true):setScrollOnTop(false);
-    console.log(scrollOnTop)
   }, [scrollOnTop])
  
   return (

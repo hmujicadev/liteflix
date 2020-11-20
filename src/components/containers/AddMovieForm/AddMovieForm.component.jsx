@@ -54,7 +54,7 @@ const AddMovieForm = ({onClose}) => {
   };
 
   useEffect(() => {
-    console.log('UE', loadedFiles);
+
     return () => {};
   }, [loadedFiles]);
 

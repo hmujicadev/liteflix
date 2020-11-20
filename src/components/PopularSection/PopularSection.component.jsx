@@ -9,7 +9,6 @@ import {
 } from './PopularSection.styles';
 
 const PopularSection = ({popularMovies}) => {
-  console.log(popularMovies);
   return (
     <PopularSectionWrapper>
       <PopularSectionTitle>Populares de Liteflix</PopularSectionTitle>

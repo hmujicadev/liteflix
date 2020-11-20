@@ -4,6 +4,7 @@ import {
   UserMenuList,
   UserMenuItem,
   DropdownWrapper,
+  DropdownArrowWrapper,
   DropdownUpArrow,
   DropdownList,
   DropdownItem,
@@ -21,7 +22,7 @@ const UserMenu = () => {
 
   const variants = {
     open: {
-      height: '230px',
+      height: '245px',
       transition: {
         duration: 0.5,
         when: 'beforeChildren',
@@ -53,8 +54,12 @@ const UserMenu = () => {
         duration: 0.4,
       },
     },
-    closed: {opacity: 0,transition:{
-      duration: .1},},
+    closed: {
+      opacity: 0,
+      transition: {
+        duration: 0.1,
+      },
+    },
   };
 
   return (
@@ -71,15 +76,17 @@ const UserMenu = () => {
           <UserProfile size="25px" margin="0 5px 0 0" />
           <BsChevronDown color="#fff" />
         </UserMenuItem>
-        <DropdownUpArrow animate={showMenuUser ? 'open' : 'closed'} variants={variantsArrow} />
+        <DropdownArrowWrapper 
+            onMouseEnter={() => setShowMenuUser(true)}>
+          <DropdownUpArrow
+            animate={showMenuUser ? 'open' : 'closed'}
+            variants={variantsArrow}
+          />
+        </DropdownArrowWrapper>
       </UserMenuList>
-      <DropdownWrapper animate={showMenuUser ? 'open' : 'closed'} variants={variants}>
+
+      <DropdownWrapper onMouseLeave={() => setShowMenuUser(false)} animate={showMenuUser ? 'open' : 'closed'} variants={variants}>
         <DropdownList>
-          {/*        <DropdownItemWrapper variants={variantsItemList}>
-            <DropdownItem activeUser>
-              <UserProfile></UserProfile>
-            </DropdownItem>
-          </DropdownItemWrapper> */}
           {MENU_USER_ITEMS.map(
             ({
               id,
@@ -109,44 +116,6 @@ const UserMenu = () => {
               </DropdownItemWrapper>
             ),
           )}
-
-          {/* <DropdownItemWrapper>
-            <DropdownItem>
-              <UserProfile variant="gray" padding="5px 0 5px 6px" size="25px" margin="0 8px 0 0" />
-              <SpanText font="12px" width="75px" color="#9b9b9b">
-                User 03
-              </SpanText>
-            </DropdownItem>
-          </DropdownItemWrapper>
-          <DropdownItemWrapper>
-            <DropdownItem>
-              <UserProfile variant="gray" padding="5px 0 5px 6px" size="25px" margin="0 8px 0 0" />
-              <SpanText font="12px" width="75px" color="#9b9b9b">
-                User 04
-              </SpanText>
-            </DropdownItem>
-          </DropdownItemWrapper>
-          <DropdownItemWrapper>
-            <DropdownItem borderb height="28px">
-              <SpanText font="12px" padding="10px 0" margin="10px 0 0 0">
-                Configuración
-              </SpanText>
-            </DropdownItem>
-          </DropdownItemWrapper>
-          <DropdownItemWrapper>
-            <DropdownItem borderb height="28px">
-              <SpanText font="12px" padding="10px 0" margin="10px 0 0 0">
-                Ayuda
-              </SpanText>
-            </DropdownItem>
-          </DropdownItemWrapper>
-          <DropdownItemWrapper>
-            <DropdownItem height="28px">
-              <SpanText font="12px" padding="10px 0" margin="10px 0 0 0" weight="bold">
-                Log Out
-              </SpanText>
-            </DropdownItem>
-          </DropdownItemWrapper> */}
         </DropdownList>
       </DropdownWrapper>
     </UserMenuWrapper>

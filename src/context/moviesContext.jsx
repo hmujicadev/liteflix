@@ -6,6 +6,7 @@ import {
   getPopularMovies,
   saveLocalMovies,
   getLocalMovies,
+  
 } from '../services';
 
 export const MoviesContext = createContext();
@@ -24,7 +25,7 @@ const MoviesProvider = ({children}) => {
       const popular = await getPopularMovies();
       const myMovies = getLocalMovies().length ? getLocalMovies(): [];
       setMovies({
-        featured: featured.data.results[0],
+        featured: featured.data.results[2],
         upcoming: upcoming.data.results.slice(0, 4),
         popular: popular.data.results.slice(0, 4),
         myMovies,

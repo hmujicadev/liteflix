@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {device} from '../../styles/media'
+import {motion} from 'framer-motion'
 
 export const UpcomingContainer = styled.div`
   max-width:1200px;
@@ -13,7 +14,7 @@ export const UpcomingContainer = styled.div`
     }
 `;
 
-export const UpcomingSubTitle = styled.h3`
+export const UpcomingSubTitle = styled(motion.h3)`
   font-size:20px;
   color:#fff;
   font-weight: bold;
