@@ -80,7 +80,6 @@ const UserMenu = () => {
           <DropdownUpArrow animate={showMenuUser ? 'open' : 'closed'} variants={variantsArrow} />
         </DropdownArrowWrapper>
       </UserMenuList>
-
       <DropdownWrapper
         onMouseLeave={() => setShowMenuUser(false)}
         animate={showMenuUser ? 'open' : 'closed'}
@@ -100,7 +99,6 @@ const UserMenu = () => {
               color,
               name,
               borderb,
-              height,
               weight,
             }) => (
               <DropdownItemWrapper key={id} variants={variantsItemList}>
