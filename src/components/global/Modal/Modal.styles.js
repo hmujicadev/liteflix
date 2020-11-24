@@ -24,7 +24,7 @@ export const StyledModal = styled.div`
 `;
 
 export const ModalContent = styled.div`
-margin:0 auto;
+  margin: 0 auto;
   @media ${device.mobileL} {
     max-width: 97%;
   }
