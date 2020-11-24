@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {AnimatePresence, motion} from 'framer-motion';
+import {device} from '../../../styles/media';
 
 export const AnimatedModalPresence = styled(AnimatePresence)``;
 
@@ -22,7 +23,12 @@ export const StyledModal = styled.div`
   cursor: default;
 `;
 
-export const ModalContent = styled.div``;
+export const ModalContent = styled.div`
+margin:0 auto;
+  @media ${device.mobileL} {
+    max-width: 97%;
+  }
+`;
 
 export const ModalCloseWrapper = styled.div`
   cursor: pointer;
@@ -31,4 +37,7 @@ export const ModalCloseWrapper = styled.div`
   position: absolute;
   top: 15px;
   right: 15px;
+  @media ${device.mobileL} {
+    padding: 10px;
+  }
 `;

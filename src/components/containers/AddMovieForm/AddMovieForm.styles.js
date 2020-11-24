@@ -9,7 +9,7 @@ export const AddMovieFormWrapper = styled(motion.div)`
   padding: 40px 40px 25px 40px;
   transition: all 300ms ease;
   @media ${device.mobileL} {
-    width: 94vw;
+    width: 90%;
     margin: 0 auto;
     padding: 3vw;
   }
@@ -26,10 +26,11 @@ export const InputFormWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
-  margin-bottom: 40px;
+  margin: 20px 0 40px 0;
 
   @media ${device.mobileL} {
     grid-template-columns: 1fr;
+    margin-top: 20px;
   }
 `;
 export const UploadMovieButtonWrapper = styled.div`
