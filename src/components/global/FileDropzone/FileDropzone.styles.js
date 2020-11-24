@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {device} from '../../../styles/media';
 
 const getColor = props => {
   if (props.isDragAccept) {
@@ -28,6 +29,9 @@ export const DzWrapper = styled.div`
   outline: none;
   transition: border 0.24s ease-in-out;
   cursor: pointer;
+  @media ${device.mobileL} {
+    margin: 0 55px 0 0;
+  }
 `;
 
 export const IconWrapper = styled.div`
